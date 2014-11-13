@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"> 
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet">	
+	<script src="js/jquery.js"></script>
+	<script src="js/two.min.js"></script>
+	<script src="js/randomColor.js"></script>
+	<script src="js/calculate.js"></script>
+	<title>Sales Calculator</title>
+</head>
+<body>	
+	<canvas id="screen">
+	</canvas>
+	<div id="front"> 
+		<h2>Sales Calculator</h2>
+		<form id="calculator" oninput="Calculate()">			
+			<input name="computer" type="number" value="0" />
+			<p>Computer - $400</p>
+			<input name="monitor" type="number" value="0"/>
+			<p>Monitor - $150</p>			
+			<input name="mouse" type="number" value="0"/>
+			<p>Mouse - $15</p><br/>			
+			<input name="keyboard" type="number" value="0"/>
+			<p>Keyboard - $10</p><br/>			
+			<input name="ram" type="number" value="0"/>
+			<p>Ram - $50</p><br/>		
+			<input name="processor" type="number" value="0"/>
+			<p>Upgraded Processor - $175</p><br/>
+			<br/>
+			<p class="sub">Subtotal: $</p>
+			<output name="total" for="computer monitor mouse keyboard ram monitor">0</output><br/>
+			<p class="sub">Tax: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$</p>
+			<output name="tax" for="computer monitor mouse keyboard ram monitor">0</output><br/>
+			<p class="sub">Sales: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$</p>
+			<output name="sales" for="computer monitor mouse keyboard ram monitor">0</output><br/>
+		</form>
+		<h4> &copy;&nbsp;Paul Walko&nbsp;2014</h4>
+	</div>
+	<script type="text/javascript" src="js/background2.js"></script>
+</body>
+</html>

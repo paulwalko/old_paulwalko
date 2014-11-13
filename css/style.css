@@ -1,0 +1,45 @@
+canvas{
+	background-color: #ffffff;
+}
+body{
+	background-color: #ddd;
+	overflow-x: hidden;
+}
+#screen{
+	position: absolute;
+	top: 0px;
+	height: 100%;
+	z-index: -1;
+	margin-left: -8px;
+}
+#front{	
+	margin-top: 100px;
+	/*left: 50%;*/
+	text-align: center;
+	margin-left: auto;
+	margin-right:auto;
+	width: 300px;
+	font-family: 'Roboto Slab', serif;
+	background-color: white;
+}
+.eq, #result,input,p{
+	display: inline;
+	margin:0px; 
+	padding:0px;
+}
+#front{
+	width: 250px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 20px;
+	border: 2px solid #a1a1a1;
+	padding: 10px 40px; 
+	background: #dddddd;
+	border-radius: 25px;
+}
+#calculator input, #calculator p{
+	width: 100%;
+}
+.sub{
+	font-weight: bold;
+}
