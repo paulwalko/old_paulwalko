@@ -1,43 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8"> 
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
-	<link href="css/style.css" rel="stylesheet">	
-	<script src="js/jquery.js"></script>
-	<script src="js/two.min.js"></script>
-	<script src="js/randomColor.js"></script>
-	<script src="js/calculate.js"></script>
-	<title>Sales Calculator</title>
-</head>
-<body>	
-	<canvas id="screen">
-	</canvas>
-	<div id="front"> 
-		<h2>Sales Calculator</h2>
-		<form id="calculator" oninput="Calculate()">			
-			<input name="computer" type="number" value="0" />
-			<p>Computer - $400</p>
-			<input name="monitor" type="number" value="0"/>
-			<p>Monitor - $150</p>			
-			<input name="mouse" type="number" value="0"/>
-			<p>Mouse - $15</p><br/>			
-			<input name="keyboard" type="number" value="0"/>
-			<p>Keyboard - $10</p><br/>			
-			<input name="ram" type="number" value="0"/>
-			<p>Ram - $50</p><br/>		
-			<input name="processor" type="number" value="0"/>
-			<p>Upgraded Processor - $175</p><br/>
-			<br/>
-			<p class="sub">Subtotal: $</p>
-			<output name="total" for="computer monitor mouse keyboard ram monitor">0</output><br/>
-			<p class="sub">Tax: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$</p>
-			<output name="tax" for="computer monitor mouse keyboard ram monitor">0</output><br/>
-			<p class="sub">Sales: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$</p>
-			<output name="sales" for="computer monitor mouse keyboard ram monitor">0</output><br/>
-		</form>
-		<h4> &copy;&nbsp;Paul Walko&nbsp;2014</h4>
-	</div>
-	<script type="text/javascript" src="js/background2.js"></script>
-</body>
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Striped by HTML5 UP</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2><a href="#">Welcome to WebGoat</a></h2>
+										<p>A free, fully responsive HTML5 site template by HTML5 UP</p>
+									</header>
+									
+									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+									<p>
+										<strong>Hello!</strong> You're looking at <strong>Striped</strong>, a fully responsive HTML5 site template designed by <a href="http://n33.co">AJ</a>
+										for <a href="http://html5up.net">HTML5 UP</a> It features a clean, minimalistic design, styling for all basic page elements (including blockquotes, tables and lists), a
+										repositionable sidebar (left or right), and HTML5/CSS3 code designed for quick and easy customization (see code comments for details).
+									</p>
+									<p>
+										Striped is released for free under the <a href="http://html5up.net/license">Creative Commons Attribution license</a> so feel free to use it for personal projects
+										or even commercial ones &ndash; just be sure to credit <a href="http://html5up.net">HTML5 UP</a> for the design. If you like what you see here, be sure to check out
+										<a href="http://html5up.net">HTML5 UP</a> for more cool designs or follow me on <a href="http://twitter.com/n33co">Twitter</a> for new releases and updates.
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+					
+						<!-- Logo -->
+							<h1 id="logo"><a href="#"></a></h1>
+					
+					<!-- Search -->
+							<!--<section class="box search">
+								<form method="post" action="#">
+									<input type="text" class="text" name="search" placeholder="Search" />
+								</form>
+							</section>	
+							-->
+
+						<!-- Nav -->
+							<nav id="nav">
+								<!--<ul>
+									<li>
+										<a href="#">Introduction</a>
+										<ul>
+											<li>How to work with WebGoat</li>
+											<li>Tomcat Configuration</li>
+											<li>Useful TOols</li>
+											<li>How to create a Lesson</li>
+										</ul>
+									</li>
+								</ul>-->
+								<ul>
+							      <li>
+							      	<a href="#"><label for="lessons">LESSONS</label></a>
+							      	<input type="radio" name="verticalMenu" id="lessons" />
+							      </li>
+							      <li>
+							        <a href="#"><label for="introduction">Introduction</label></a>
+							        <input type="radio" name="verticalMenu" id="introduction" />
+							        <div>
+							          <ul>
+							            <li><a href="#">How to work with WebGoat</a></li>
+							            <li><a href="#">Tomcat Configuration</a></li>
+							            <li><a href="#">Useful Tools</a></li>
+							            <li><a href="#">How to create a Lesson</a></li>
+							          </ul>
+							        </div>
+							      </li>
+							    </ul>
+								<!--<ul>
+									<li><a href="#"></a></li>
+									<li><a href="#">Archives</a></li>
+									<li><a href="#">About Me</a></li>
+									<li><a href="#">Contact Me</a></li>
+								</ul>-->
+							</nav>										
+
+						<!-- Copyright -->
+							<ul id="copyright">
+								<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+
+					</div>
+
+			</div>
+
+	</body>
 </html>
