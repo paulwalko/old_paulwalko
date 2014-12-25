@@ -369,6 +369,8 @@
 				}
 	
 	/* List */
+
+
 	
 		ul.default
 		{
@@ -681,7 +683,7 @@
 	{
 	}
 
-		#nav > ul > li > a + input {
+		#nav > ul > li > label + input {
            display: none;
            visability: hidden;
         }
@@ -694,8 +696,8 @@
 		    transition: all .5s linear;
 		}
 
-		#nav > ul > li > a + input:checked + div {
-		     max-height: 500px;
+		#nav > ul > li > label + input:checked + div {
+		     max-height: 5000px;
 		}
 		
 		#nav > ul{
@@ -932,7 +934,7 @@
 			width: 50px;
 			height: 30px;
 			line-height: 30px;
-			background: #c94663 url('images/bg01.png');
+			background: #E84C3D url('images/bg01.png');
 			border-radius: 5px;
 			color: #fff;
 			text-align: center;

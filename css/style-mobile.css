@@ -162,16 +162,9 @@
 /* Nav                                                                           */
 /*********************************************************************************/
 
-	#nav
-	{
-		margin-top: 0 !important;
-	}
-
+	
 		
-		#nav:before
-		{
-			display: none !important;
-		}
+		
 		
 		#nav li:hover a
 		{
