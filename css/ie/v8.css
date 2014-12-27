@@ -1,5 +1,5 @@
 /*
-	Striped by HTML5 UP
+	Miniport by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -8,29 +8,63 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
-	form input[type="text"],
-	form input[type="email"],
-	form input[type="password"],			
+	form input[type=text],
+	form input[type=password],
 	form select,
 	form textarea,
 	input[type="button"],
 	input[type="submit"],
 	input[type="reset"],
 	.button,
-	.pagination .pages a,
-	.box.calendar td a,
-	.box.calendar td span,
-	.box.text-style1 .inner,
-	#nav li a,
-	.box.post .info .stats li a,
-	#logo
+	#top .image,
+	#top .image img,
+	#nav a
 	{
 		position: relative;
-		box-shadow: none !important;
 		-ms-behavior: url('css/ie/PIE.htc');
 	}
+
+	/* Section/Article */
 	
-	.box.post .info {
-		box-shadow: none !important;
-		-ms-behavior: url('css/ie/PIE.htc');
+		section > .last-child,
+		article > .last-child
+		{
+			margin-bottom: 0;
+		}
+
+		section.last-child,
+		article.last-child
+		{
+			margin-bottom: 0;
+		}
+		
+	/* Box */
+
+		.box
+		{
+			border: solid 1px #ddd;
+		}
+
+	/* List */
+
+		ul.social li a
+		{
+			position: relative;
+			top: 0 !important;
+			overflow: hidden;
+			-ms-behavior: url('css/ie/PIE.htc');
+		}
+
+			ul.social li a:before
+			{
+				background: none;
+			}
+
+/*********************************************************************************/
+/* Wrappers                                                                      */
+/*********************************************************************************/
+
+	.wrapper
+	{
+		border-top: solid 1px #ddd;
 	}

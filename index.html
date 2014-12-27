@@ -1,349 +1,236 @@
 <!DOCTYPE HTML>
 <!--
-	Striped by HTML5 UP
+	Miniport by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>WebGoat</title>
+		<title>Miniport by HTML5 UP</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
-			<link rel="stylesheet" href="css/style-wide.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 	</head>
-	<!--
-		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
-		Set it to "right-sidebar" to, you guessed it, position it on the right.
-	-->
-	
-	<body class="left-sidebar">
+	<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#top">Top</a></li>
+					<li><a href="paulwalko_resume.pdf">Resume</a></li>
+					<li><a href="#portfolio">Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
 
-				<!-- Content -->
-					<div id="content">
-						<div class="inner">
-					
-							<!-- Post -->
-								<article class="box post post-excerpt">
-									<header>
-										<!--
-											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-											if they get too long. You can also remove the <p> entirely if you don't
-											need a subtitle.
-										-->
-										<h2><a href="#">How To Work With WebGoat</a></h2>
-										<p>Welcome to a brief overview of WebGoat</p>
-									</header>
-									
+		<!-- Home -->
+			<div class="wrapper style1 first">
+				<article class="container" id="top">
+					<div class="row">
+						<!--<div class="4u">
+							<span class="image fit"><img src="images/pic00.jpg" alt="" /></span>
+						</div>
+						-->
+						<div class="8u">
+							<header>
+								<h1><strong>Paul Walko</strong></h1>
+							</header>
+							<a href="#portfolio" class="button big scrolly">My Recent Projects</a>
+						</div>
+					</div>
+				</article>
+			</div>
 
-									<p>
-										<h3>Environment Information</h3>
-										WebGoat uses the Apache Tomcat server but can run in any application server. It is configured to run on localhost although this can be easily changed, see the "Tomcat Configuration" section in the Introduction. 
-									</p>
-									<p>
-										<h3>The WebGoat Interface</h3>
-										<img src="lessons/introduction/images/wginterface.png" width="700em"/>
-										<ol>
-											<li>1. Lesson Categories in WebGoat. Click on a Category to see specific Lessons.</li>
-											<li>2. This will show the underlying source code.</li>
-											<li>3. This will show the complete solution of the seleted lesson.</li>
-											<li>4. This will show goals and objectives of the lesson.</li>
-											<li>5. This will show technical hints to solve the lesson.</li>
-											<li>6. This shows the HTTP request data.</li>
-											<li>7. If you want to restart a lesson you can use this link.</li>
-										</ol>
-									</p>
-									<p>
-										<h3>Solve The Lesson</h3>
-										Always start with a lesson plan. Then try to solve the lesson and if necessary, use the hints. The last hint is the solution text if applicable. If you cannot solve the lesson using the hints, you may view the solution for complete details.
-									</p>
-									<p>
-										<h3>Read And Edit Parameters/Cookies</h3>
-										To read and edit parameters and cookies you need a local proxy like OWASP ZAP to intercept the HTTP request. More information on ZAP can be found in the "Useful Tools" section in the Introduction. 
-									</p>
+		<!-- Work -->
+			<!--<div class="wrapper style2">
+				<article id="work">
+					<header>
+						<h2>Here's all the stuff I do.</h2>
+						<p>Odio turpis amet sed consequat eget posuere consequat.</p>
+					</header>
+					<div class="container">
+						<div class="row">
+							<div class="4u">
+								<section class="box style1">
+									<span class="icon featured fa-comments-o"></span>
+									<h3>Consequat lorem</h3>
+									<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+								</section>
+							</div>
+							<div class="4u">
+								<section class="box style1">
+									<span class="icon featured fa-camera-retro"></span>
+									<h3>Lorem dolor tempus</h3>
+									<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+								</section>
+							</div>
+							<div class="4u">
+								<section class="box style1">
+									<span class="icon featured fa-thumbs-o-up"></span>
+									<h3>Feugiat posuere</h3>
+									<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+								</section>
+							</div>
+						</div>
+					</div>
+					<footer>
+						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+						<a href="#portfolio" class="button big scrolly">See some of my recent work</a>
+					</footer>
+				</article>
+			</div>
+			<--
+		<!-- Portfolio -->
+			<div class="wrapper style3">
+				<article id="portfolio">
+					<header>
+						<h2>My Projects</h2>
+					</header>
+					<div class="container">
+						<div class="row">
+							<div class="4u">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+									<h3><a href="WebGoat-Local/index.html">WebGoat-Local</a></h3>
+									<p>A port of WebGoat that's not server based.</p>
+									<p><a href="https://github.com/paulwalko/WebGoat-Local/">Github</a>
 								</article>
 							</div>
+							<div class="4u">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+									<h3><a href="#">Arduino Air Sensor</a></h3>
+									<p>An Ozone, Particaulate, and Hazordous gas sensor.</p>
+									<p><a href="#">Github Link</a></p>
+								</article>
+							</div>
+							<div class="4u">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+									<h3><a href="#">RoboLog</a></h3>
+									<p>A Sign in via PIN website to record hours.</p>
+								</article>
+							</div>
+						</div>
+						<!--
+						<div class="row">
+							<div class="4u">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+									<h3><a href="#">BigData Project</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+							<div class="4u">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+									<h3><a href="#">Python Black-Jack</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+							<div class="4u">
+								<article class="box style2">
+									<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+									<h3><a href="#">VroomBot</a></h3>
+									<p>Ornare nulla proin odio consequat.</p>
+								</article>
+							</div>
+						</div>
 					</div>
+					-->
+					<footer>
+						<a href="#contact" class="button big scrolly">Send me a Message</a>
+					</footer>
+				</article>
+			</div>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-					
-						<!-- Logo -->
-							<h1 id="logo"><a href="#"></a></h1>
-
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-							      <li>
-							      	<label for="lessons">LESSONS</label>
-							      	<input type="radio" name="verticalMenu" id="lessons" />
-							      </li>
-							      <li>
-							      	<label for="introduction">Introduction</label>
-							        <input type="radio" name="verticalMenu" id="introduction" />
-							        <div>
-							          <ul>
-							            <li><a href="../../index.html">How to work with WebGoat</a></li>
-							            <li><a href="section1_tomcat.html">Tomcat Configuration</a></li>
-							            <li><a href="section1_tools.html">Useful Tools</a></li>
-							            <li><a href="section1_howto.html">How to create a Lesson</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="general">General</label>
-							        <input type="radio" name="verticalMenu" id="general" />
-							        <div>
-							          <ul>
-							            <li><a href="section2_http.html">Http Basics</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="control">Access Control Flaws</label>
-							        <input type="radio" name="verticalMenu" id="control" />
-							        <div>
-							          <ul>
-							            <li><a href="section3_usingamatrix.html">Using an Access Control Matrix</a></li>
-							            <li><a href="section3_bypassapath.html">Bypass a Path Based Access Control Scheme</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="ajax">AJAX Security</label>
-							        <input type="radio" name="verticalMenu" id="ajax" />
-							        <div>
-							          <ul>
-							            <li><a href="section4_sameorigin.html">Same Origin Policy Protection</a></li>
-							            <li><a href="section4_domscripting.html">LAB: DOM-Based cross-site scriptig</a></li>
-							            <li><a href="section4_clientfilter.html">LAB: Client Side Filtering</a></li>
-							            <li><a href="section4_dominjection.html">DOM Injection</a></li>
-							            <li><a href="section4_xmlinjection.html">XML Injection</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="auth">Authentication Flaws</label>
-							        <input type="radio" name="verticalMenu" id="auth" />
-							        <div>
-							          <ul>
-							            <li><a href="section5_passwordstr.html">Password Strength</a></li>
-							            <li><a href="section5_forgotpassword.html">Forgot Password</a></li>
-							            <li><a href="section5_multilevel2.html">Multi Level Login 2</a></li>
-							            <li><a href="section5_multilevel1.html">Multi Level Login 1</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="buffer">Buffer Overflows</label>
-							        <input type="radio" name="verticalMenu" id="buffer" />
-							        <div>
-							          <ul>
-							            <li><a href="section6_offbyone.html">Off-by-One Overflows</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="code">Code Quality</label>
-							        <input type="radio" name="verticalMenu" id="code" />
-							        <div>
-							          <ul>
-							            <li><a href="section7_discoverclues.html">Discover Clues in the HTML</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="concurrency">Concurrency</label>
-							        <input type="radio" name="verticalMenu" id="concurrency" />
-							        <div>
-							          <ul>
-							            <li><a href="section8_threadsafety.html">Thread Safety Problems</a></li>
-							            <li><a href="section8_shoppingcart.html">Shopping Cart Concurrency Flaw</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="xss">Cross Site Scripting (XSS)</label>
-							        <input type="radio" name="verticalMenu" id="xss" />
-							        <div>
-							          <ul>
-							            <li><a href="section9_phishingxss.html">Phishing with XSS</a></li>
-							            <li><a href="section9_labxss.html">LAB: Cross Site Scripting</a></li>
-							            <li><a href="section9_stage1.html">Stage 1: Stored XSS</a></li>
-							            <li><a href="section9_stage2.html">Stage 2: Block Stored XSS using Input Validation</a></li>
-							            <li><a href="section9_stage3.html">Stage 3: Stored XSS Revisited</a></li>
-							            <li><a href="section9_stage4.html">Stage 4: Block Stored XSS using Output Encoding</a></li>
-							            <li><a href="section9_stage5.html">Stage 5: Reflected XSS</a></li>
-							            <li><a href="section9_stage6.html">Stage 6: Block Reflected XSS</a></li>
-							            <li><a href="section9_storedcss.html">Stored XSS Attacks</a></li>
-							            <li><a href="section9_reflectedxss.html">Reflected XSS Attacks</a></li>
-							            <li><a href="section9_csrf.html">Cross Site Request Forgery (CSRF)</a></li>
-							            <li><a href="section9_csrfpromptpass.html">CSRF Prompt By-Pass</a></li>
-							            <li><a href="section9_csrftokenpass.html">CSRF Token By-Pass</a></li>
-							            <li><a href="section9_httponlytest.html">HTTPOnly Test</a></li>
-							            <li><a href="section9_xstattacks.html">Cross Site Tracing (XST) Attacks</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="error">Improper Error Handling</label>
-							        <input type="radio" name="verticalMenu" id="error" />
-							        <div>
-							          <ul>
-							            <li><a href="section4_failopen.html">Fail Open Authentication Scheme</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="flaws">Injection Flaws</label>
-							        <input type="radio" name="verticalMenu" id="flaws" />
-							        <div>
-							          <ul>
-							            <li><a href="section4_sameorigin.html">Command Injection</a></li>
-							            <li><a href="section4_domscripting.html">Numeric SQL Injection</a></li>
-							            <li><a href="section4_clientfilter.html">Log Spoofing</a></li>
-							            <li><a href="section4_dominjection.html">XPATH Injection</a></li>
-							            <li><a href="section4_xmlinjection.html">String SQL Injection</a></li>
-							            <li><a href="section4_xmlinjection.html">LAB: SQL Injection</a></li>
-							            <li><a href="section4_xmlinjection.html">Stage 1: String SQL Injection</a></li>
-							            <li><a href="section4_xmlinjection.html">Stage 2: Parameterized Query #1</a></li>
-							            <li><a href="section4_xmlinjection.html">Stage 3: Numeric SQL Injection</a></li>
-							            <li><a href="section4_xmlinjection.html">Stage 4: Parameterized Query #2</a></li>
-							            <li><a href="section4_xmlinjection.html">Modify Data with SQL Injection</a></li>
-							            <li><a href="section4_xmlinjection.html">Add Data with SQL Injection</a></li>
-							            <li><a href="section4_xmlinjection.html">Database Backdoors</a></li>
-							            <li><a href="section4_xmlinjection.html">Blind Numeric SQL Injection</a></li>
-							            <li><a href="section4_xmlinjection.html">Blind String SQL Injection</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="denial">Denial of Service</label>
-							        <input type="radio" name="verticalMenu" id="denial" />
-							        <div>
-							          <ul>
-							            <li><a href="section4_sameorigin.html">ZipBomb</a></li>
-							            <li><a href="section4_domscripting.html">Denial of Service from Multiple Logins</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="communication">Insecure Communication</label>
-							        <input type="radio" name="verticalMenu" id="communication" />
-							        <div>
-							          <ul>
-							            <li><a href="section4_sameorigin.html">Insecure Login</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="config">Insecure Configuration</label>
-							        <input type="radio" name="verticalMenu" id="config" />
-							        <div>
-							          <ul>
-							            <li><a href="section4_sameorigin.html">Forced Browsing</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="storage">Insecure Storage</label>
-							        <input type="radio" name="verticalMenu" id="storage" />
-							        <div>
-							          <ul>
-							            <li><a href="section4_sameorigin.html">Encoding Basics</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="mali">Malicious Execution</label>
-							        <input type="radio" name="verticalMenu" id="mali" />
-							        <div>
-							          <ul>
-							            <li><a href="section4_sameorigin.html">Malicious FIle Execution</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="parameter">Parameter Tampering</label>
-							        <input type="radio" name="verticalMenu" id="parameter" />
-							        <div>
-							          <ul>
-							             <li><a href="section4_sameorigin.html">Bypass HTML FIeld Restrictions</a></li>
-							            <li><a href="section4_domscripting.html">Exploit Hidden Fields</a></li>
-							            <li><a href="section4_clientfilter.html">Exploit Unchecked Email</a></li>
-							            <li><a href="section4_dominjection.html">Bypass Client Side JavaScript Validation</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="session">Session Management Flaws</label>
-							        <input type="radio" name="verticalMenu" id="session" />
-							        <div>
-							          <ul>
-							           <li><a href="section4_sameorigin.html">Hijack a Session</a></li>
-							            <li><a href="section4_domscripting.html">Spoof an Authentication Cookie</a></li>
-							            <li><a href="section4_clientfilter.html">Session Fixation</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="web">Web Services</label>
-							        <input type="radio" name="verticalMenu" id="web" />
-							        <div>
-							          <ul>
-							            <li><a href="section4_sameorigin.html">Create a SOAP Request</a></li>
-							            <li><a href="section4_domscripting.html">WSDL Scanning</a></li>
-							            <li><a href="section4_clientfilter.html">Web Service SAX Injection</a></li>
-							            <li><a href="section4_dominjection.html">Web Service SQL Injection</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="admin">Admin Functions</label>
-							        <input type="radio" name="verticalMenu" id="admin" />
-							        <div>
-							          <ul>
-							            <li><a href="section4_sameorigin.html">Report Card</a></li>
-							            <li><a href="section4_domscripting.html">Summary Report Card</a></li>
-							            <li><a href="section4_clientfilter.html">Refresh Database</a></li>
-							            <li><a href="section4_sameorigin.html">User Information</a></li>
-							            <li><a href="section4_domscripting.html">Product Information</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							      <li>
-							      	<label for="challenge">Challenge</label>
-							        <input type="radio" name="verticalMenu" id="challenge" />
-							        <div>
-							          <ul>
-							            <li><a href="section4_sameorigin.html">The CHALLENGE</a></li>
-							          </ul>
-							        </div>
-							      </li>
-							    </ul>
-							</nav>										
-
-						<!-- Copyright -->
-							<ul id="copyright">
-								<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-
+		<!-- Contact -->
+			<div class="wrapper style4">
+				<article id="contact" class="container 75%">
+					<header>
+						<h2>Contact Me</h2>
+					</header>
+					<div>
+						<div class="row">
+							<div class="12u">
+								<form method="post" action="#">
+									<div>
+										<div class="row">
+											<div class="6u">
+												<input type="text" name="name" id="name" placeholder="Name" />
+											</div>
+											<div class="6u">
+												<input type="text" name="email" id="email" placeholder="Email" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<input type="text" name="subject" id="subject" placeholder="Subject" />
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+												<textarea name="message" id="message" placeholder="Message"></textarea>
+											</div>
+										</div>
+										<div class="row 200%">
+											<div class="12u">
+												<ul class="actions">
+													<li><input type="submit" value="Send Message" /></li>
+													<li><input type="reset" value="Clear Form" class="alt" /></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<hr />
+								<h3>Find me on ...</h3>
+								<ul class="social">
+									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
+									<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+									<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+									<!--
+									<li><a href="#" class="icon fa-rss"><span>RSS</span></a></li>
+									<li><a href="#" class="icon fa-instagram"><span>Instagram</span></a></li>
+									<li><a href="#" class="icon fa-foursquare"><span>Foursquare</span></a></li>
+									<li><a href="#" class="icon fa-skype"><span>Skype</span></a></li>
+									<li><a href="#" class="icon fa-soundcloud"><span>Soundcloud</span></a></li>
+									<li><a href="#" class="icon fa-youtube"><span>YouTube</span></a></li>
+									<li><a href="#" class="icon fa-blogger"><span>Blogger</span></a></li>
+									<li><a href="#" class="icon fa-flickr"><span>Flickr</span></a></li>
+									<li><a href="#" class="icon fa-vimeo"><span>Vimeo</span></a></li>
+									-->
+								</ul>
+								<hr />
+							</div>
+						</div>
 					</div>
-
+					<footer>
+						<ul id="copyright">
+							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+				</article>
 			</div>
 
 	</body>
