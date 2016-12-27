@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Command Injection</h2>
+									</header>
+									
+
+									<p>
+										<div id="lessonContent">
+										    Command&nbsp; injection attacks represent a serious threat to any
+										    parameter-driven site. The methods behind an attack are easy to learn and
+										    the damage caused can range from considerable to complete system
+										    compromise. Despite these risks an incredible number of systems on the
+										    internet are susceptible to this form of attack.<br>
+										    Not only is it a threat easily instigated, it is also a threat that, with a
+										    little common-sense and forethought, can be almost totally prevented. This
+										    lesson will show the student several examples of parameter injection.<br>
+										    It is always good practice to sanitize all input data, especially data that
+										    will used in OS command, scripts, and database queries.<br>
+										    Try to inject a command to the operating system.
+										</div>
+
+										<div id="lessonContent">
+										    <form accept-charset="UNKNOWN" action="attack?Screen=11&amp;menu=1100"
+										    enctype="" id="form" method="post" name="form">
+										        You are currently viewing: <b>BasicAuthentication.help</b>
+
+										        <p>Select the lesson plan to view:<select name="HelpFile">
+										            <option>
+										                AccessControlMatrix.help
+										            </option>
+
+										            <option>
+										                BackDoors.help
+										            </option>
+
+										            <option>
+										                BasicAuthentication.help
+										            </option>
+
+										            <option>
+										                BlindSqlInjection.help
+										            </option>
+
+										            <option>
+										                BufferOverflow.help
+										            </option>
+
+										            <option>
+										                ChallengeScreen.help
+										            </option>
+
+										            <option>
+										                ClientSideFiltering.help
+										            </option>
+
+										            <option>
+										                ClientSideValidation.help
+										            </option>
+
+										            <option>
+										                CommandInjection.help
+										            </option>
+
+										            <option>
+										                ConcurrencyCart.help
+										            </option>
+
+										            <option>
+										                CrossSiteScripting.help
+										            </option>
+
+										            <option>
+										                CSRF.help
+										            </option>
+
+										            <option>
+										                CsrfPromptByPass.help
+										            </option>
+
+										            <option>
+										                CsrfTokenByPass.help
+										            </option>
+
+										            <option>
+										                DangerousEval.help
+										            </option>
+
+										            <option>
+										                DBCrossSiteScripting.help
+										            </option>
+
+										            <option>
+										                DBSQLInjection.help
+										            </option>
+
+										            <option>
+										                DOMInjection.help
+										            </option>
+
+										            <option>
+										                DOMXSS.help
+										            </option>
+
+										            <option>
+										                DOS_Login.help
+										            </option>
+
+										            <option>
+										                Encoding.help
+										            </option>
+
+										            <option>
+										                FailOpenAuthentication.help
+										            </option>
+
+										            <option>
+										                ForcedBrowsing.help
+										            </option>
+
+										            <option>
+										                ForgotPassword.help
+										            </option>
+
+										            <option>
+										                HiddenFieldTampering.help
+										            </option>
+
+										            <option>
+										                HowToWork.help
+										            </option>
+
+										            <option>
+										                HtmlClues.help
+										            </option>
+
+										            <option>
+										                HttpBasics.help
+										            </option>
+
+										            <option>
+										                HttpOnly.help
+										            </option>
+
+										            <option>
+										                HttpSplitting.help
+										            </option>
+
+										            <option>
+										                InsecureLogin.help
+										            </option>
+
+										            <option>
+										                JavaScriptValidation.help
+										            </option>
+
+										            <option>
+										                JSONInjection.help
+										            </option>
+
+										            <option>
+										                Lesson_Plan_Template.help
+										            </option>
+
+										            <option>
+										                LogSpoofing.help
+										            </option>
+
+										            <option>
+										                MultiLevelLogin1.help
+										            </option>
+
+										            <option>
+										                MultiLevelLogin2.help
+										            </option>
+
+										            <option>
+										                NewLesson.help
+										            </option>
+
+										            <option>
+										                OffByOne.help
+										            </option>
+
+										            <option>
+										                PasswordStrength.help
+										            </option>
+
+										            <option>
+										                PathBasedAccessControl.help
+										            </option>
+
+										            <option>
+										                Phishing.help
+										            </option>
+
+										            <option>
+										                ReflectedXSS.help
+										            </option>
+
+										            <option>
+										                RemoteAdminFlaw.help
+										            </option>
+
+										            <option>
+										                RoleBasedAccessControl.help
+										            </option>
+
+										            <option>
+										                SameOriginPolicyProtection.help
+										            </option>
+
+										            <option>
+										                SessionFixation.help
+										            </option>
+
+										            <option>
+										                SilentTransactions.help
+										            </option>
+
+										            <option>
+										                SoapRequest.help
+										            </option>
+
+										            <option>
+										                SQLInjection.help
+										            </option>
+
+										            <option>
+										                SqlNumericInjection.help
+										            </option>
+
+										            <option>
+										                SqlStringInjection.help
+										            </option>
+
+										            <option>
+										                StoredXss.help
+										            </option>
+
+										            <option>
+										                ThreadSafetyProblem.help
+										            </option>
+
+										            <option>
+										                TomcatSetup.help
+										            </option>
+
+										            <option>
+										                TraceXSS.help
+										            </option>
+
+										            <option>
+										                UncheckedEmail.help
+										            </option>
+
+										            <option>
+										                UsefulTools.help
+										            </option>
+
+										            <option>
+										                WeakAuthenticationCookie.help
+										            </option>
+
+										            <option>
+										                WeakSessionID.help
+										            </option>
+
+										            <option>
+										                WelcomeScreeen.help
+										            </option>
+
+										            <option>
+										                WSDLScanning.help
+										            </option>
+
+										            <option>
+										                WsSAXInjection.help
+										            </option>
+
+										            <option>
+										                WsSqlInjection.help
+										            </option>
+
+										            <option>
+										                XMLInjection.help
+										            </option>
+
+										            <option>
+										                XPATHInjection.help
+										            </option>
+										        </select><input name="SUBMIT" type="submit" value="View"><br>
+										        <br></p>
+										        <hr width="90%">
+										        ExecResults for '[/bin/sh, -c, cat
+										        "/home/paul/Downloads/.extract/webapps/WebGoat/lesson_plans/en/BasicAuthentication.html"]'<br>
+
+										        Output...<br>
+
+										        <div style="text-align: center">
+										            <br>
+
+										            <p><b>Lesson Plan Title:</b> Basic Authentication</p><br>
+										        </div><br>
+
+										        <p style="font-weight: bold">Concept / Topic To Teach:</p><br>
+										        <!-- Start Instructions -->
+										        <br>
+										        Basic Authentication is used to protect server side resources. The web
+										        server will send a 401 authentication request with the response for the
+										        requested resource. The client side browser will then prompt the user
+										        for a user name and password using a browser supplied dialog box. The
+										        browser will base64 encode the user name and password and send those
+										        credentials back to the web server. The web server will then validate
+										        the credentials and return the requested resource if the credentials
+										        are correct. These credentials are automatically resent for each page
+										        protected with this mechanism without requiring the user to enter their
+										        credentials again.<br>
+										        <br>
+
+										        <p style="font-weight: bold">General Goal(s):</p><br>
+										        For this lesson, your goal is to understand Basic Authentication and
+										        answer the questions below.<br>
+										        <!-- Stop Instructions --><br>
+										        Returncode: 0<br>
+										    </form><script>
+										goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();
+										    </script>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

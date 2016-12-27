@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Create a WebGoat Lesson</h2>
+									</header>
+									
+
+									<p>
+										Adding lessons to WebGoat is very easy. If you have an idea that would be suitable
+										for a new lesson, follow these few simple instructions to implement it:
+										<br /><br />
+										* Download the source code from here.
+										<br /><br />
+										* Setup framework: follow the simple instructions in "HOW TO create the WebGoat workspace.txt" that comes with the project.
+										<br /><br />
+										* You need to add two files for each new lesson:
+										<br />
+										&nbsp;&nbsp;- YourLesson.java to org.owasp.webgoat.lessons
+										<br />
+										&nbsp;&nbsp;- YourLesson.html to WebContent/lesson_plans 
+									</p>
+									<p>
+										<h3>Detailed Lesson Creation Instructions</h3>
+										Lesson are simple to create and very little coding is required.   In fact, most lessons can be created by following the easy to use instructions in the <a href="http://www.owasp.org/index.php/WebGoat_User_and_Install_Guide_Table_of_Contents">WebGoat User Guide.</a>  If you would prefer, send your lesson ideas to <a href="mailto:webgoat@owasp.org">webgoat@owasp.org</a>
+										<div class="code">
+											Detailed instructions for adding a lesson<br />
+											<br />
+											All you have to do is implement the abstract methods in LessonAdapter.<br />
+											Follow the outline below.<br />
+											<br />
+											WebGoat uses the Element Construction Set from the Jakarta project.<br />
+											You should read up on the API for ECS at <br />
+											http://jakarta.apache.org/site/downloads/downloads_ecs.cgi.<br />
+											In addition you can look at the other lessons for examples of how to use the ECS.<br />
+											<br />
+											<br />
+											<br />
+											Step 1: Set up the framework<br />
+											<br />
+											import java.util.*;<br />
+											import org.apache.ecs.*;<br />
+											import org.apache.ecs.html.*;<br />
+											<br />
+											// Add copyright text - use text from another lesson<br />
+											<br />
+											public class NewLesson extends LessonAdapter<br />
+											{<br />
+											<br />
+											&#09;protected Element createContent(WebSession s)<br />
+											&#09;{<br />
+											&#09;&#09;return( new StringElement( "Hello World" ) );<br />
+											&#09;}<br />
+											<br />
+											&#09;public String getCategory()<br />
+											&#09;{<br />
+											&#09;}<br />
+											<br />
+											&#09;protected List getHints()<br />
+											&#09;{<br />
+											&#09;}<br />
+											<br />
+											&#09;protected String getInstructions()<br />
+											&#09;{<br />
+											&#09;}<br />
+											<br />
+											&#09;protected Element getMenuItem()<br />
+											&#09;{<br />
+											&#09;}<br />
+											<br />
+											&#09;protected Integer getRanking()<br />
+											&#09;{<br />
+											&#09;}<br />
+											<br />
+											&#09;public String getTitle()<br />
+											&#09;{<br />
+											&#09;}<br />
+											}<br />
+											<br />	
+											<br />
+											<br />
+											Step 2: Implement createContent<br />
+											<br />
+											Creating the content for a lesson is fairly simple. There are two main parts:<br /> 
+											&#09;(1) handling the input from the user's last request, <br />
+											&#09;(2) generating the next screen for the user.  <br />
+											This all happens within the createContent method.  Remember that each lesson <br />
+											should be handled on a single page, so you'll need to design your lesson to <br />
+											work that way.  A good generic pattern for the createContent method is shown <br />
+											below:<br />
+											<br />
+											// define a constant for the field name<br />
+											private static final String INPUT = "input";<br />
+											<br />
+											protected Element createContent(WebSession s)<br />
+											{<br />
+											&#09;ElementContainer ec = new ElementContainer();<br />
+											&#09;try<br />
+											&#09;{<br />
+											&#09;&#09;// get some input from the user -- see ParameterParser <br />
+											&#09;&#09;// for details<br />
+											&#09;&#09;String userInput = s.getParser().getStringParameter(INPUT, "");<br />
+											<br />
+											&#09;&#09;// do something with the input<br />
+											&#09;&#09;//   -- SQL query?<br />
+											&#09;&#09;//   -- Runtime.exec?<br />
+											&#09;&#09;//   -- Some other dangerous thing<br />
+											<br />
+											&#09;&#09;// generate some output -- a string and an input field<br />
+											&#09;&#09;ec.addElement(new StringElement("Enter a string: "));<br />
+											&#09;&#09;ec.addElement( new Input(Input.TEXT, INPUT, userInput) );<br />
+											<br />
+											&#09;&#09;// Tell the lesson tracker the lesson has completed.<br />
+											&#09;&#09;// This should occur when the user has 'hacked' the lesson.<br />
+											&#09;&#09;makeSuccess(s);<br />
+											<br />
+											&#09;}<br />
+											&#09;catch (Exception e)<br />
+											&#09;{<br />
+											&#09;&#09;s.setMessage("Error generating " + this.getClass().getName());<br />
+											&#09;&#09;e.printStackTrace();<br />
+											&#09;}<br />
+											&#09;return (ec);<br />
+											}<br />
+											<br />
+											ECS is quite powerful -- see the Encoding lesson for an example of how <br />
+											to use it to create a table with rows and rows of output.<br />
+											<br />
+											<br />
+											Step 3: Implement the other methods<br />
+											<br />
+											The other methods in the LessonAdapter class help the lesson plug into <br />
+											the overall WebGoat framework.  They are simple and should only take a <br />
+											few minutes to implement.<br />
+											<br />
+											public String getCategory()<br />
+											{<br />
+											&#09;// The default category is "General" Only override this<br />
+											&#09;// method if you wish to create a new category or if you<br />
+											&#09;// wish this lesson to reside within a category other the<br />
+											&#09;// "General"<br />
+											<br />
+											&#09;return( "NewCategory" );  // or use an existing category<br />
+											}<br />
+											<br />
+											protected List getHints()<br />
+											{<br />
+											&#09;// Hints will be returned to the user in the order they <br />
+											&#09;// appear below.  The user must click on the "next hint"<br />
+											&#09;// button before the hint will be displayed.<br />
+											<br />
+											&#09;List hints = new ArrayList();<br />
+											&#09;hints.add("A general hint to put users on the right track");<br />
+											&#09;hints.add("A hint that gives away a little piece of the problem");<br />
+											&#09;hints.add("A hint that basically gives the answer");<br />
+											&#09;return hints;<br />
+											}<br />
+											<br />
+											protected String getInstructions()<br />
+											{<br />
+											&#09;// Instructions will rendered as html and will appear below<br />
+											&#09;// the area and above the actual lesson area.<br />
+											&#09;// Instructions should provide the user with the general setup<br />
+											&#09;// and goal of the lesson.<br />
+											<br />
+											&#09;return("The text that goes at the top of the page");<br />
+											}<br />
+											<br />
+											protected Element getMenuItem()<br />
+											{<br />
+											&#09;// This is the text of the link that will appear on<br />
+											&#09;// the left hand menus under the appropriate category.<br />
+											&#09;// Their is a limited amount of horizontal space in<br />
+											&#09;// this area before wrapping will occur.<br />
+											<br />
+											&#09;return( "MyLesson" );<br />
+											}<br />
+											<br />
+											protected Integer getRanking()<br />
+											{<br />
+											&#09;// The ranking denotes the order in which the menu item<br />
+											&#09;// will appear in menu list for each category.  The lowest<br />
+											&#09;// number will appear as the first lesson.<br />
+											<br />
+											&#09;return new Integer(10);<br />
+											}<br />
+											<br />
+											public String getTitle()<br />
+											{<br />
+											&#09;// The title of the lesson.  This will appear above the<br />
+											&#09;// control area at the top of the page.  This field will<br />
+											&#09;// be rendered as html.<br />
+											<br />
+											&#09;return ("My Lesson's Short Title");<br />
+											}<br />
+											<br />
+											<br />
+											Step 4: Build and test<br />
+											<br />
+											Once you've implemented your new lesson, you can test the lesson by<br />
+											starting the Tomcat server (within Eclipse). See the<br />
+											"readme.txt" document in the WebGoat root.<br />
+											<br />
+											<br />
+											Step 5: Create the lesson plan<br />
+											<br />
+											All WebGoat lessons have a lesson plan that describes the goals of the lesson.<br />
+											Create a lesson plan and put it in lesson_plans folder for each supported language.<br />
+											<br />
+											<br />
+											Step 6: Give back to the community<br />
+											<br />
+											If you've come up with a lesson that you think helps to teach people about <br />
+											web application security, please contribute it by sending it to the people <br />
+											who maintain the WebGoat application.<br />
+											<br />
+											Thanks!<br />
+											<br />
+											The WebGoat Team.<br />
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

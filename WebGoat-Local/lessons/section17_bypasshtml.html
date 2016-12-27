@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Bypass HTML Field Restrictions</h2>
+									</header>
+									
+
+									<p>
+										<div id="lessonContent">
+										    The form below uses HTML form field restrictions. In order to pass this
+										    lesson, submit the form with each field containing an unallowed value.
+										    <b>You must submit invalid values for all six fields in one form
+										    submission.</b>
+										</div>
+
+										<div id="lessonContent">
+										    <form accept-charset="UNKNOWN" action="attack?Screen=51&amp;menu=1700"
+										    enctype="" id="form" method="post" name="form">
+										        <div>
+										            Select field with two possible values:
+										        </div><select name="select">
+										            <option>
+										                foo
+										            </option>
+
+										            <option>
+										                bar
+										            </option>
+										        </select>
+
+										        <p></p>
+
+										        <div>
+										            Radio button with two possible values:
+										        </div><input checked name="radio" type="radio" value="foo">foo<br>
+										        <input name="radio" type="radio" value="bar">bar
+
+										        <p></p>
+
+										        <div>
+										            Checkbox:
+										        </div><input checked name="checkbox" type="checkbox">checkbox
+
+										        <p></p>
+
+										        <div>
+										            Input field restricted to 5 characters:
+										        </div><input maxlength="5" name="shortinput" type="text" value="12345">
+
+										        <p></p>
+
+										        <div>
+										            Disabled input field:
+										        </div><input disabled name="disabledinput" type="text" value=
+										        "disabled"><br>
+
+										        <p></p>
+
+										        <div>
+										            Submit button:
+										        </div><input name="SUBMIT" type="submit" value="Submit">
+										    </form><script>
+										goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();
+										    </script>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

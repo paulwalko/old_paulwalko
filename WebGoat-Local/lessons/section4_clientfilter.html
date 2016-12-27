@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>LAB: Client Side Filtering</h2>
+									</header>
+									
+
+									<p>
+										STAGE 1: You are Moe Stooge, CSO of Goat Hills Financial. You have access to everyone in the company's information, except the CEO, Neville Bartholomew. Or at least you shouldn't have access to the CEO's information. For this exercise, examine the contents of the page to see what extra information you can find.
+									</p>
+									<p>
+										<div class="lesson_workspace">
+											<br>
+											<br>
+											<p>
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select user:
+												<select id="UserSelect" onfocus="fetchUserData()" name="UserSelect" onchange="selectUser()">
+													<option value="0" label="Choose Employee">Choose Employee</option>
+													<option value="101" label="Larry Stooge">Larry Stooge</option>
+													<option value="103" label="Curly Stooge">Curly Stooge</option>
+													<option value="104" label="Eric Walker">Eric Walker</option>
+													<option value="105" label="Tom Cat">Tom Cat</option>
+													<option value="106" label="Jerry Mouse">Jerry Mouse</option>
+													<option value="107" label="David Giambi">David Giambi</option>
+													<option value="108" label="Bruce McGuirre">Bruce McGuirre</option>
+													<option value="109" label="Sean Livingston">Sean Livingston</option>
+													<option value="110" label="Joanne McDougal">Joanne McDougal</option>
+												</select>
+											</p>
+											<table style="display: none" id="hiddenEmployeeRecords" width="90%" align="center" border="1" cellpadding="2" cellspacing="0">
+												<div>
+													<table width="90%" align="center" border="1" cellpadding="0" cellspacing="0">
+														<tbody>
+															<tr>
+																<td>UserID</td>
+																<td>First Name</td>
+																<td>Last Name</td>
+																<td>SSN</td>
+																<td>Salary</td>
+															</tr>
+															<tr id="101">
+																<td>101</td>
+																<td>Larry</td>
+																<td>Stooge</td>
+																<td>386-09-5451</td>
+																<td>55000</td>
+															</tr>
+															<tr id="102">
+																<td>102</td>
+																<td>Moe</td>
+																<td>Stooge</td>
+																<td>936-18-4524</td>
+																<td>140000</td>
+															</tr>
+															<tr id="103">
+																<td>103</td>
+																<td>Curly</td>
+																<td>Stooge</td>
+																<td>961-08-0047</td>
+																<td>50000</td>
+															</tr>
+															<tr id="104">
+																<td>104</td>
+																<td>Eric</td>
+																<td>Walker</td>
+																<td>445-66-5565</td>
+																<td>13000</td>
+															</tr>
+															<tr id="105">
+																<td>105</td>
+																<td>Tom</td>
+																<td>Cat</td>
+																<td>792-14-6364</td>
+																<td>80000</td>
+															</tr>
+															<tr id="106">
+																<td>106</td>
+																<td>Jerry</td>
+																<td>Mouse</td>
+																<td>858-55-4452</td>
+																<td>70000</td>
+															</tr>
+															<tr id="107">
+																<td>107</td>
+																<td>David</td>
+																<td>Giambi</td>
+																<td>439-20-9405</td>
+																<td>100000</td>
+															</tr>
+															<tr id="108">
+																<td>108</td>
+																<td>Bruce</td>
+																<td>McGuirre</td>
+																<td>707-95-9482</td>
+																<td>110000</td>
+															</tr>
+															<tr id="109">
+																<td>109</td>
+																<td>Sean</td>
+																<td>Livingston</td>
+																<td>136-55-1046</td>
+																<td>130000</td>
+															</tr>
+															<tr id="110">
+																<td>110</td>
+																<td>Joanne</td>
+																<td>McDougal</td>
+																<td>789-54-2413</td>
+																<td>90000</td>
+															</tr>
+															<tr id="111">
+																<td>111</td>
+																<td>John</td>
+																<td>Wayne</td>
+																<td>129-69-4572</td>
+																<td>200000</td>
+															</tr>
+															<tr id="112">
+																<td>112</td>
+																<td>Neville</td>
+																<td>Bartholomew</td>
+																<td>111-111-1111</td>
+																<td>450000</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</table>
+											<table width="90%" align="center" border="1" cellpadding="2" cellspacing="0">
+												<tbody>
+													<tr>
+														<td>UserID</td>
+														<td>First Name</td>
+														<td>Last Name</td>
+														<td>SSN</td>
+														<td>Salary</td>
+													</tr>
+													<tr id="employeeRecord">
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</p>
+									<p>
+										<h3>Solve The Lesson</h3>
+										Always start with a lesson plan. Then try to solve the lesson and if necessary, use the hints. The last hint is the solution text if applicable. If you cannot solve the lesson using the hints, you may view the solution for complete details.
+									</p>
+									<p>
+										<h3>Read And Edit Parameters/Cookies</h3>
+										To read and edit parameters and cookies you need a local proxy like OWASP ZAP to intercept the HTTP request. More information on ZAP can be found in the "Useful Tools" section in the Introduction. 
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

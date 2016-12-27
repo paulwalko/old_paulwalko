@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>XPATH Injection</h2>
+									</header>
+									
+
+									<p>
+										<div id="lessonContent">
+										    The form below allows employees to see all their personal data including
+										    their salaries. Your account is Mike/test123. Your goal is to try to see
+										    other employees data as well.
+										</div>
+
+										<div id="lessonContent">
+										    <form accept-charset="UNKNOWN" action="attack?Screen=46&amp;menu=1100"
+										    enctype="" id="form" method="post" name="form">
+										        <br>
+
+										        <h1>Welcome to WebGoat employee intranet</h1><br>
+
+										        <table align="center" border="0" cellpadding="0" cellspacing="0" width=
+										        "90%">
+										            <tbody>
+										                <tr>
+										                    <th align="left" colspan="2">Please confirm your username
+										                    and password before viewing your profile.</th>
+										                </tr>
+
+										                <tr>
+										                    <td align="left" colspan="2" width="30%">*Required
+										                    Fields</td>
+										                </tr>
+
+										                <tr>
+										                    <td align="left" colspan="2" width="30%">&nbsp;</td>
+										                </tr>
+
+										                <tr>
+										                    <td style="font-weight: bold">*User Name:</td>
+
+										                    <td><input name="Username" type="text" value=""></td>
+										                </tr>
+
+										                <tr>
+										                    <td style="font-weight: bold">*Password:</td>
+
+										                    <td><input name="Password" type="password" value=""></td>
+										                </tr>
+
+										                <tr>
+										                    <td><input name="SUBMIT" type="submit" value="Submit"></td>
+										                </tr>
+										            </tbody>
+										        </table>
+
+										        <p>Username is a required field</p>
+										    </form><script>
+										goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();
+										    </script>
+										</div>
+									</p>									
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

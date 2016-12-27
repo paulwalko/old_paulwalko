@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Stage 6: Block Reflected XSS</h2>
+										<p>Stage 6</p>
+									</header>
+									<p>
+										<div id="lessonContent"> 									    
+										    Stage 1: Execute a Stored Cross Site Scripting (XSS) attack.<br>
+										    As 'Tom', execute a Stored XSS attack against the Street field on the Edit Profile page.  Verify that 'Jerry' is affected by the attack. <br>
+										    The passwords for the accounts are the lower-case versions of their given names (e.g. the password for Tom Cat is "tom").
+										</div>
+										<style>
+											#lesson_wrapper {height: 435px;width: 500px;}
+											#lesson_header {background-image: url(lessons/CrossSiteScripting/images/lesson1_header.jpg);width: 490px;padding-right: 10px;padding-top: 60px;background-repeat: no-repeat;}
+											.lesson_workspace {background-image: url(lessons/CrossSiteScripting/images/lesson1_workspace.jpg);width: 489px;height: 325px;padding-left: 10px;padding-top: 10px;background-repeat: no-repeat;}
+											.lesson_text {height: 240px;width: 460px;padding-top: 5px;}
+											#lesson_buttons_bottom {height: 20px;width: 460px;}
+											#lesson_b_b_left {width: 300px;float: left;}
+											#lesson_b_b_right input {width: 100px;float: right;}
+											.lesson_title_box {height: 20px;width: 420px;padding-left: 30px;}
+											.lesson_workspace { }
+											.lesson_txt_10 {font-family: Arial, Helvetica, sans-serif;font-size: 10px;}
+											.lesson_text_db {color: #0066FF}
+											#lesson_login {background-image: url(lessons/CrossSiteScripting/images/lesson1_loginWindow.jpg);height: 124px;width: 311px;background-repeat: no-repeat;padding-top: 30px;margin-left: 80px;margin-top: 50px;text-align: center;}
+											#lesson_login_txt {font-family: Arial, Helvetica, sans-serif;font-size: 12px;text-align: center;}
+											#lesson_search {background-image: url(lessons/CrossSiteScripting/images/lesson1_SearchWindow.jpg);height: 124px;width: 311px;background-repeat: no-repeat;padding-top: 30px;margin-left: 80px;margin-top: 50px;text-align: center;}
+										</style>
+										<div id="lesson_wrapper">
+											<div id="lesson_header"></div>
+											<div class="lesson_workspace">											
+												<div id="lesson_login">
+													<div id="lesson_login_txt">
+														
+														<form id="form1" name="form1" method="post" action="attack?Screen=20&amp;menu=900">
+														    	<label>
+														      	<select name="employee_id">														      	
+															      	<option value="101">Larry Stooge (employee)</option>																
+															      	<option value="102">Moe Stooge (manager)</option>																
+															      	<option value="103">Curly Stooge (employee)</option>																
+															      	<option value="104">Eric Walker (employee)</option>																
+															      	<option value="105">Tom Cat (employee)</option>																
+															      	<option value="106">Jerry Mouse (hr)</option>																
+															      	<option value="107">David Giambi (manager)</option>																
+															      	<option value="108">Bruce McGuirre (employee)</option>																
+															      	<option value="109">Sean Livingston (employee)</option>																
+															      	<option value="110">Joanne McDougal (hr)</option>																
+															      	<option value="111">John Wayne (admin)</option>																
+															      	<option value="112">Neville Bartholomew (admin)</option>																
+												                </select>
+													        </label>
+															<br>
+														    	<label>Password
+														    		<input name="password" size="10" maxlength="8" type="password">
+														    </label>
+															<br>
+															<input name="action" value="Login" type="submit">
+														</form>
+													</div>
+												</div>											
+
+											</div>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

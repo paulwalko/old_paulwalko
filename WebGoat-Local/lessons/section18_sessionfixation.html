@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Session Fixation</h2>
+									</header>
+									
+
+									<p><div id="lessonContent">
+									    STAGE 1: You are Hacker Joe and you want to steal the session from Jane.
+									    Send a prepared email to the victim which looks like an official email from
+									    the bank. A template message is prepared below, you will need to add a
+									    Session ID (SID) in the link inside the email. Alter the link to include a
+									    SID.<br>
+									    <br>
+									    <b>You are: Hacker Joe</b>
+									</div>
+									<div id="lessonContent">
+									    <form accept-charset="UNKNOWN" action="attack?Screen=56&amp;menu=1800"
+									    enctype="" id="form" method="post" name="form">
+									        <table>
+									            <tbody>
+									                <tr>
+									                    <td style="font-weight: bold">Mail To:</td>
+
+									                    <td>jane.plane@owasp.org</td>
+									                </tr>
+
+									                <tr>
+									                    <td style="font-weight: bold">Mail From:</td>
+
+									                    <td>admin@webgoatfinancial.com</td>
+									                </tr>
+
+									                <tr>
+									                    <td style="font-weight: bold">Title:</td>
+
+									                    <td><input size="30" value="Check your account"></td>
+									                </tr>
+
+									                <tr>
+									                    <td colspan="2">
+										                    <textarea cols="67" name="mailContent" rows="8">
+																&lt;b&gt;Dear MS. Plane&lt;/b&gt; &lt;br&gt;&lt;br&gt;During the last week we had a few problems with our database. We have received many complaints regarding incorrect account details. Please use the following link to verify your account data:&lt;br&gt;&lt;br&gt;&lt;center&gt;&lt;a href=/webgoat/attack?Screen=56&amp;menu=1800&gt; Goat Hills Financial&lt;/a&gt;&lt;/center&gt;&lt;br&gt;&lt;br&gt;We are sorry for the any inconvenience and thank you for your cooparation.&lt;br&gt;&lt;br&gt;&lt;b&gt;Your Goat Hills Financial Team&lt;/b&gt;&lt;center&gt; &lt;br&gt;&lt;br&gt;&lt;img src='images/WebGoatFinancial/banklogo.jpg'&gt;&lt;/center&gt;
+															</textarea>
+														</td>
+									                </tr>
+
+									                <tr>
+									                    <td align="center" colspan="2"><input name="SendMail" type=
+									                    "submit" value="Send Mail"></td>
+									                </tr>
+									            </tbody>
+									        </table>
+									    </form><script>
+									goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();
+									    </script>
+									</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

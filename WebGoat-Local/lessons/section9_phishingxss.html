@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Phishing with XSS</h2>
+									</header>
+									<p>
+										<div id="lessonContent">										    
+										    This lesson is an example of how a website might support a phishing attack
+										    <br>
+									        <br>Below is an example of a standard search feature.
+								            <br>Using XSS and HTML insertion, your goal is to: 
+							                <ul>
+							                    <li>Insert html to that requests credentials</li>
+							                    <li>Add javascript to actually collect the credentials</li>
+							                    <li>Post the credentials to http://localhost/webgoat/catcher?PROPERTY=yes...</li>
+							                </ul> To pass this lesson, the credentials must be posted to the catcher servlet.
+							                <br>
+							                </div>
+							                <div id="lessonContent">
+							                    <form accept-charset="UNKNOWN" method="POST" name="form" action="attack?Screen=54&amp;menu=900" enctype="">
+							                        <h1>WebGoat Search </h1>
+							                        <table align="center" border="0" cellpadding="2" cellspacing="0">
+							                            <tbody>
+							                                <tr>
+							                                    <td colspan="2">&nbsp;</td>
+							                                </tr>
+							                                <tr>
+							                                    <th colspan="2" align="center">This facility will search the WebGoat source.</th>
+							                                </tr>
+							                                <tr>
+							                                    <td colspan="2">&nbsp;</td>
+							                                </tr>
+							                                <tr>
+							                                    <td align="right"><b>Search: </b></td>
+							                                    <td align="left"><input name="Username" value="" type="TEXT"></td>
+						                                    </tr>
+						                                    <tr align="center">
+							                                        <td colspan="2"><input name="SUBMIT" value="Search" type="SUBMIT"></td>
+					                                        </tr>
+					                                    </tbody>
+					                                </table>
+					                            </form>
+				                            <script>goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();</script>
+				                        </div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

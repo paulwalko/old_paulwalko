@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Insecure Client Storage</h2>
+									</header>
+									
+
+									<p>	
+										<div id="lessonContent">    
+										    STAGE 1:	For this exercise, your mission is to discover a coupon code to receive an unintended discount.
+										</div>
+										<div id="lessonContent">
+											<form accept-charset="UNKNOWN" method="POST" name="form" action="attack?Screen=43&amp;menu=400" enctype="">
+												<script src="lessonJS/clientSideValidation.js" language="JavaScript"></script>
+												<hr width="90%">
+												<center>
+													<h1>Shopping Cart</h1>
+												</center>
+												<table width="90%" align="center" border="1" cellpadding="2" cellspacing="0">
+													<tbody>
+														<tr>
+															<th width="70%">Shopping Cart Items -- To Buy Now</th>
+															<th width="10%">Price</th>
+															<th width="10%">Quantity</th>
+															<th width="10%">Total</th>
+														</tr>
+														<tr>
+															<td>Studio RTA - Laptop/Reading Cart with Tilting Surface - Cherry </td>
+															<td align="right"><input size="10" value="$69.99" style="border:0px;" name="PRC1" readonly="" type="TEXT"></td>
+															<td align="right"><input size="10" value="0" onkeyup="updateTotals();" name="QTY1" onload="updateTotals();" type="TEXT"></td>
+															<td align="right"><input size="10" value="$0.00" style="border:0px;" name="TOT1" readonly="" type="TEXT"></td>
+														</tr>
+														<tr>
+															<td>Dynex - Traditional Notebook Case</td>
+															<td align="right"><input size="10" value="$27.99" style="border:0px;" name="PRC2" readonly="" type="TEXT"></td>
+															<td align="right"><input size="10" value="0" onkeyup="updateTotals();" name="QTY2" type="TEXT"></td>
+															<td align="right"><input size="10" value="$0.00" style="border:0px;" name="TOT2" readonly="" type="TEXT"></td>
+														</tr>
+														<tr>
+															<td>Hewlett-Packard - Pavilion Notebook with Intelï¿½ Centrinoï¿½</td>
+															<td align="right"><input size="10" value="$1599.99" style="border:0px;" name="PRC3" readonly="" type="TEXT"></td>
+															<td align="right"><input size="10" value="0" onkeyup="updateTotals();" name="QTY3" type="TEXT"></td>
+															<td align="right"><input size="10" value="$0.00" style="border:0px;" name="TOT3" readonly="" type="TEXT"></td>
+														</tr>
+														<tr>
+															<td>3 - Year Performance Service Plan $1000 and Over </td>
+															<td align="right"><input size="10" value="$299.99" style="border:0px;" name="PRC4" readonly="" type="TEXT"></td>
+															<td align="right"><input size="10" value="0" onkeyup="updateTotals();" name="QTY4" type="TEXT"></td>
+															<td align="right"><input size="10" value="$0.00" style="border:0px;" name="TOT4" readonly="" type="TEXT"></td>
+														</tr>
+													</tbody>
+												</table>
+												<br>
+												<table width="90%" align="center" border="0" cellpadding="2" cellspacing="0">
+													<tbody>
+														<tr>
+															<td>Total before coupon is applied:</td>
+															<td align="right"><input value="$0.00" style="border:0px;" name="SUBTOT" readonly="" type="TEXT"></td>
+														</tr>
+														<tr>
+															<td>Total to be charged to your credit card:</td>
+															<td align="right"><input value="$0.00" style="border:0px;" name="GRANDTOT" readonly="" type="TEXT"></td>
+														</tr>
+														<tr>
+															<td colspan="2">&nbsp;</td>
+														</tr>
+														<tr>
+															<td>Enter your credit card number:</td>
+															<td><input name="field2" value="4128 3214 0002 1999" type="TEXT"></td>
+														</tr>
+														<tr>
+															<td>Enter your coupon code:</td>
+															<td><input value="" onkeyup="isValidCoupon(field1.value)" name="field1" type="TEXT"></td>
+														</tr>
+														<tr>
+															<td colspan="2" align="center"><input name="SUBMIT" value="Purchase" type="SUBMIT"></td>
+														</tr>
+													</tbody>
+												</table>
+												<br>
+												<hr width="90%">
+											</form>
+											<script>goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();</script>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Malicoius FIle Execution</h2>
+									</header>
+									
+
+									<p>
+										<div id="lessonContent">
+										    The form below allows you to upload an image which will be displayed on
+										    this page. Features like this are often found on web based discussion
+										    boards and social networking sites. This feature is vulnerable to Malicious
+										    File Execution.<br>
+										    <br>
+										    In order to pass this lesson, upload and run a malicious file. In order to
+										    prove that your file can execute, it should create another file named:<br>
+										    <br>
+										    /home/paul/Downloads/.extract/webapps/WebGoat/mfe_target/webgoat.txt<br>
+										    <br>
+										    Once you have created this file, you will pass the lesson.
+										</div>
+
+										<div id="lessonContent">
+										    <form accept-charset="UNKNOWN" action="attack?Screen=18&amp;menu=1600"
+										    enctype="multipart/form-data" id="form" method="post" name="form">
+										        <h1>WebGoat Image Storage</h1>
+
+										        <p>Your current image:</p>
+
+										        <p>No image uploaded</p>
+
+										        <p>Upload a new image:<input name="myfile" type="file" value=
+										        ""><input name="SUBMIT" type="submit" value="Start Upload"></p>
+										    </form><script>
+										goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();
+										    </script>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

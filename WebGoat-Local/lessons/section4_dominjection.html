@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>DOM Injection</h2>
+									</header>
+									
+
+									<p>
+										* Your victim is a system that takes an activation key to allow you to use it.<br>
+										* Your goal should be to try to get to enable the activate button.<br>
+										* Take some time to see the HTML source in order to understand how the key validation process works.<br>
+									</p>
+									<p>
+										<div id="lessonContent">
+											<form accept-charset="UNKNOWN" method="POST" name="form" action="attack?Screen=75&amp;menu=400" enctype="">
+												<script>
+													function validate() {
+													var keyField = document.getElementById('key');
+													var url = 'attack?Screen=75&menu=400&from=ajax&key=' + encodeURIComponent(keyField.value);
+													if (typeof XMLHttpRequest != 'undefined') {
+													req = new XMLHttpRequest();
+													} else if (window.ActiveXObject) {
+													req = new ActiveXObject('Microsoft.XMLHTTP');
+													   }
+													   req.open('GET', url, true);
+													   req.onreadystatechange = callback;
+													   req.send(null);
+													}
+													function callback() {
+													    if (req.readyState == 4) { 
+													        if (req.status == 200) { 
+													            var message = req.responseText;
+													    var messageDiv = document.getElementById('MessageDiv');
+													  try {
+													          eval(message);
+													    
+													        messageDiv.innerHTML = 'Correct licence Key.' 
+													      }
+													  catch(err)
+													  { 
+													    messageDiv.innerHTML = 'Wrong license key.'
+													} 
+													    }}}
+												</script>
+												<br>
+												<h1>Welcome to WebGoat Registration Page:</h1>
+												<br>Please enter the license key that was emailed to you to start using the application.<br>
+												<br>
+												<table width="70%" align="center" border="0" cellpadding="0" cellspacing="0">
+													<tbody>
+														<tr>
+															<td>License Key: </td>
+															<td><input onkeyup="validate();" id="key" value="" name="key" type="TEXT"></td>
+														</tr>
+														<tr>
+															<td colspan="2">&nbsp;</td>
+														</tr>
+														<tr>
+															<td>&nbsp;</td>
+															<td><input disabled="" id="SUBMIT" value="Activate!" name="SUBMIT" type="SUBMIT"></td>
+														</tr>
+													</tbody>
+												</table>
+												<div id="MessageDiv" name="MessageDiv">
+												</div>
+											</form>
+											<script>goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();</script>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

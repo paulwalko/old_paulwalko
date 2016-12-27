@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Reflected XSS Attacks</h2>
+									</header>
+									<p>
+										<div id="lessonContent">    
+											 It is always a good practice to validate all input on the server side.
+											 XSS can occur when unvalidated user input is used in an HTTP response. 
+											 In a reflected XSS attack, an attacker can craft a URL with the attack 
+											 script and post it to another website, email it, or otherwise get a 
+											 victim to click on it. 
+										</div>
+										<div id="lessonContent">
+											<form accept-charset="UNKNOWN" method="POST" name="form" action="attack?Screen=31&amp;menu=900" enctype="">
+									   		    <hr width="90%">
+									            <center>
+									                <h1>Shopping Cart </h1>
+									            </center>
+									            <table width="90%" align="center" border="1" cellpadding="2" cellspacing="0">
+									                <tbody>
+									                    <tr>
+									                        <th width="80%">Shopping Cart Items -- To Buy Now</th>
+									                        <th width="10%">Price</th>
+									                        <th width="3%">Quantity</th>
+									                        <th width="7%">Total</th>
+									                    </tr>
+									                    <tr>
+									                        <td>Studio RTA - Laptop/Reading Cart with Tilting Surface - Cherry </td>
+									                        <td align="right">69.99</td>
+									                        <td align="right"><input size="6" value="1" name="QTY1" type="TEXT"></td>
+									                        <td>$0.00</td>
+								                        </tr>
+									                        <tr>
+									                            <td>Dynex - Traditional Notebook Case</td>
+									                            <td align="right">27.99</td>
+									                            <td align="right"><input size="6" value="1" name="QTY2" type="TEXT"></td>
+									                            <td>$0.00</td>
+								                            </tr>
+								                            <tr>
+				                          			   	        <td>Hewlett-Packard - Pavilion Notebook with Intel Centrino</td>
+								                                <td align="right">1599.99</td>
+								                                <td align="right"><input size="6" value="1" name="QTY3" type="TEXT"></td>
+									                            <td>$0.00</td>
+							                                </tr>
+							                                <tr>
+							                                    <td>3 - Year Performance Service Plan $1000 and Over </td>
+							                                    <td align="right">299.99</td>
+							                                    <td align="right"><input size="6" value="1" name="QTY4" type="TEXT"></td>
+								                            	<td>$0.00</td>
+						                                    </tr>
+						                                </tbody>
+						                            </table>
+						                            <br>
+					                                <table width="90%" align="center" border="0" cellpadding="2" cellspacing="0">
+					                                    <tbody>
+					                                        <tr>
+					                                            <td>The total charged to your credit card:</td>
+					                                            <td>$0.00</td>
+					                                            <td><input name="SUBMIT" value="UpdateCart" type="SUBMIT"></td>
+				                                            </tr>
+				                                            <tr>
+				                                                <td colspan="2">&nbsp;</td>
+			                                    	        </tr>
+			                                    	        <tr>
+			                            	                    <td>Enter your credit card number:</td>
+				                                                <td><input name="field2" value="4128 3214 0002 1999" type="TEXT"> </td>
+			                                                </tr>
+			                                                <tr>
+			                                                    <td>Enter your three digit access code:</td>
+			                                                    <td><input name="field1" value="111" type="TEXT"></td>
+		                                                    </tr>
+		                                                    <tr>
+		                                                        <td colspan="2" align="center"><input name="SUBMIT" value="Purchase" type="SUBMIT"></td>
+	                                                        </tr>
+	                                                    </tbody>
+	                                                </table>
+	                                                <br>
+                                                    <hr width="90%">
+                                                </form>
+                                            <script>goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();</script>
+                                        </div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

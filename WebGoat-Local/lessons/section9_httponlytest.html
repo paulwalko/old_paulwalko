@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>HTTPOnly Test</h2>
+									</header>
+									
+
+									<p>
+										<div id="lessonContent">
+    
+											    To help mitigate the cross site scripting threat, Microsoft has
+											introduced a new cookie attribute entitled 'HttpOnly.' If this flag is
+											set, then the browser should not allow client-side script to access the
+											cookie. Since the attribute is relatively new, several browsers neglect
+											to handle the new attribute properly.
+
+											    <p>For a list of supported browsers see: 
+											        <a href="http://www.owasp.org/index.php/HTTPOnly#Browsers_Supporting_HTTPOnly">OWASP HTTPOnly Support</a>
+											    </p>
+											    <p>
+											        <b>General Goal(s):</b>
+											    </p>
+											The purpose of this lesson is to test whether your browser supports the
+											HTTPOnly cookie flag. Note the value of the
+
+											    <strong>unique2u</strong>
+											cookie. If your browser supports HTTPOnly, and you enable it for a
+											cookie, client side code should NOT be able to read OR write to that
+											cookie, but the browser can still send its value to the server. Some
+											browsers only prevent client side read access, but don't prevent write
+											access.
+
+											    <br>
+											        <br>
+											With the HTTPOnly attribute turned on, type
+											"javascript:alert(document.cookie)" in the browser address bar. Notice
+											all cookies are displayed except the unique2u cookie.
+
+											        </div>
+											        <div id="lessonContent">
+											            <form accept-charset="UNKNOWN" method="POST" name="form" action="attack?Screen=8&amp;menu=900" enctype="">
+											                <script language="javascript">
+											function myAlert() {
+											alert(document.cookie);
+											document.form.read_result.value=document.cookie;
+											return true;
+											}
+											function modifyAlert() {
+											document.cookie='unique2u=HACKED;';
+											alert(document.cookie);
+											return true;
+											}
+											</script>
+											                <input value="True" style="visibility:hidden" name="httponly" type="SUBMIT">
+											                    <table width="500">
+											                        <tbody>
+											                            <tr>
+											                                <td>Your browser appears to be: firefox/34.0</td>
+											                            </tr>
+											                            <tr></tr>
+											                            <tr>
+											                                <td>Do you wish to turn HTTPOnly on?</td>
+											                                <td>Yes</td>
+											                                <td>
+											                                    <input onclick="document.form.httponly.click();" value="True" name="httponly_value" type="RADIO">
+											                                    </td>
+											                                    <td>No</td>
+											                                    <td>
+											                                        <input value="False" name="httponly_value" checked="false" type="RADIO">
+											                                        </td>
+											                                        <input name="read_result" value="" type="HIDDEN">
+											                                        </tr>
+											                                    </tbody>
+											                                </table>
+											                                <table>
+											                                    <tbody>
+											                                        <tr>
+											                                            <td>
+											                                                <input value="Read Cookie" name="action" onclick="myAlert();" type="SUBMIT">
+											                                                </td>
+											                                                <td>
+											                                                    <input value="Write Cookie" name="action" onclick="modifyAlert();" type="SUBMIT">
+											                                                    </td>
+											                                                </tr>
+											                                            </tbody>
+											                                        </table>
+											                                    </form>
+											                                    <script>goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();</script>
+											                                </div>
+											                            </p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

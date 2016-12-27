@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Bypass a Path Based Access Control</h2>
+									</header>
+									
+
+									<p>
+										The 'webgoat' user has access to all the files in the lesson_plans/English directory. Try to break the access control mechanism and access a resource that is not in the listed directory. After selecting a file to view, WebGoat will report if access to the file was granted. An interesting file to try and obtain might be a file like tomcat/conf/tomcat-users.xml. Remember that file paths will be different if using the WebGoat source.<br />
+									</p>
+									<p>
+										Choose the file to view:<br />
+										<form accept-charset="UNKNOWN" method="POST" name="form" action="attack?Screen=57&amp;menu=200" enctype="">
+											<table width="90%" align="center" cellpadding="2" cellspacing="0">
+												<tbody>
+													<tr>
+														<td colspan="2"> 
+															<p>
+																<strong>Current Directory is:</strong>paulwalko.github.io/WebGoat-Local/lessons/
+																<br />
+																<br />
+																Choose the file to view:
+															</p>
+														</td>
+													</tr>
+													<tr>
+														<td width="35%">
+															<select name="File" size="15">
+																<option value="XMLInjection.html" label="XMLInjection.html">XMLInjection.html</option>
+																<option value="UsefulTools.html" label="UsefulTools.html">UsefulTools.html</option>
+																<option value="OffByOne.html" label="OffByOne.html">OffByOne.html</option>
+																<option value="ClientSideValidation.html" label="ClientSideValidation.html">ClientSideValidation.html</option>
+																<option value="CSRF.html" label="CSRF.html">CSRF.html</option>
+																<option value="HttpBasics.html" label="HttpBasics.html">HttpBasics.html</option>
+																<option value="PathBasedAccessControl.html" label="PathBasedAccessControl.html">PathBasedAccessControl.html</option>
+																<option value="DOMXSS.html" label="DOMXSS.html">DOMXSS.html</option>
+																<option value="SilentTransactions.html" label="SilentTransactions.html">SilentTransactions.html</option>
+																<option value="ForcedBrowsing.html" label="ForcedBrowsing.html">ForcedBrowsing.html</option>
+																<option value="SameOriginPolicyProtection.html" label="SameOriginPolicyProtection.html">SameOriginPolicyProtection.html</option>
+																<option value="SoapRequest.html" label="SoapRequest.html">SoapRequest.html</option>
+																<option value="XPATHInjection.html" label="XPATHInjection.html">XPATHInjection.html</option>
+																<option value="WeakAuthenticationCookie.html" label="WeakAuthenticationCookie.html">WeakAuthenticationCookie.html</option>
+																<option value="ChallengeScreen.html" label="ChallengeScreen.html">ChallengeScreen.html</option>
+																<option value="DBCrossSiteScripting.html" label="DBCrossSiteScripting.html">DBCrossSiteScripting.html</option>
+																<option value="ThreadSafetyProblem.html" label="ThreadSafetyProblem.html">ThreadSafetyProblem.html</option>
+																<option value="WSDLScanning.html" label="WSDLScanning.html">WSDLScanning.html</option>
+																<option value="WeakSessionID.html" label="WeakSessionID.html">WeakSessionID.html</option>
+																<option value="WelcomeScreeen.html" label="WelcomeScreeen.html">WelcomeScreeen.html</option>
+																<option value="NewLesson.html" label="NewLesson.html">NewLesson.html</option>
+																<option value="BlindSqlInjection.html" label="BlindSqlInjection.html">BlindSqlInjection.html</option>
+																<option value="WsSqlInjection.html" label="WsSqlInjection.html">WsSqlInjection.html</option>
+																<option value="RoleBasedAccessControl.html" label="RoleBasedAccessControl.html">RoleBasedAccessControl.html</option>
+																<option value="ClientSideFiltering.html" label="ClientSideFiltering.html">ClientSideFiltering.html</option>
+																<option value="MultiLevelLogin2.html" label="MultiLevelLogin2.html">MultiLevelLogin2.html</option>
+																<option value="RemoteAdminFlaw.html" label="RemoteAdminFlaw.html">RemoteAdminFlaw.html</option>
+																<option value="ForgotPassword.html" label="ForgotPassword.html">ForgotPassword.html</option>
+																<option value="StoredXss.html" label="StoredXss.html">StoredXss.html</option>
+																<option value="BufferOverflow.html" label="BufferOverflow.html">BufferOverflow.html</option>
+																<option value="DOS_Login.html" label="DOS_Login.html">DOS_Login.html</option>
+																<option value="LogSpoofing.html" label="LogSpoofing.html">LogSpoofing.html</option>
+																<option value="Phishing.html" label="Phishing.html">Phishing.html</option>
+																<option value="HttpOnly.html" label="HttpOnly.html">HttpOnly.html</option>
+																<option value="Encoding.html" label="Encoding.html">Encoding.html</option>
+																<option value="DOMInjection.html" label="DOMInjection.html">DOMInjection.html</option>
+																<option value="SqlNumericInjection.html" label="SqlNumericInjection.html">SqlNumericInjection.html</option>
+																<option value="SqlStringInjection.html" label="SqlStringInjection.html">SqlStringInjection.html</option>
+																<option value="TomcatSetup.html" label="TomcatSetup.html">TomcatSetup.html</option>
+																<option value="SQLInjection.html" label="SQLInjection.html">SQLInjection.html</option>
+																<option value="HowToWork.html" label="HowToWork.html">HowToWork.html</option>
+																<option value="InsecureLogin.html" label="InsecureLogin.html">InsecureLogin.html</option>
+																<option value="DangerousEval.html" label="DangerousEval.html">DangerousEval.html</option>
+																<option value="JavaScriptValidation.html" label="JavaScriptValidation.html">JavaScriptValidation.html</option>
+																<option value="JSONInjection.html" label="JSONInjection.html">JSONInjection.html</option>
+																<option value="HtmlClues.html" label="HtmlClues.html">HtmlClues.html</option>
+																<option value="HiddenFieldTampering.html" label="HiddenFieldTampering.html">HiddenFieldTampering.html</option>
+																<option value="CsrfTokenByPass.html" label="CsrfTokenByPass.html">CsrfTokenByPass.html</option>
+																<option value="TraceXSS.html" label="TraceXSS.html">TraceXSS.html</option>
+																<option value="HttpSplitting.html" label="HttpSplitting.html">HttpSplitting.html</option>
+																<option value="BackDoors.html" label="BackDoors.html">BackDoors.html</option>
+																<option value="Lesson_Plan_Template.html" label="Lesson_Plan_Template.html">Lesson_Plan_Template.html</option>
+																<option value="PasswordStrength.html" label="PasswordStrength.html">PasswordStrength.html</option>
+																<option value="UncheckedEmail.html" label="UncheckedEmail.html">UncheckedEmail.html</option>
+																<option value="ConcurrencyCart.html" label="ConcurrencyCart.html">ConcurrencyCart.html</option>
+																<option value="CommandInjection.html" label="CommandInjection.html">CommandInjection.html</option>
+																<option value="AccessControlMatrix.html" label="AccessControlMatrix.html">AccessControlMatrix.html</option>
+																<option value="CrossSiteScripting.html" label="CrossSiteScripting.html">CrossSiteScripting.html</option>
+																<option value="ReflectedXSS.html" label="ReflectedXSS.html">ReflectedXSS.html</option>
+																<option value="SessionFixation.html" label="SessionFixation.html">SessionFixation.html</option>
+																<option value="WsSAXInjection.html" label="WsSAXInjection.html">WsSAXInjection.html</option>
+																<option value="DBSQLInjection.html" label="DBSQLInjection.html">DBSQLInjection.html</option>
+																<option value="FailOpenAuthentication.html" label="FailOpenAuthentication.html">FailOpenAuthentication.html</option>
+																<option value="MultiLevelLogin1.html" label="MultiLevelLogin1.html">MultiLevelLogin1.html</option>
+																<option value="BasicAuthentication.html" label="BasicAuthentication.html">BasicAuthentication.html</option>
+																<option value="CsrfPromptByPass.html" label="CsrfPromptByPass.html">CsrfPromptByPass.html</option>
+															</select>
+														</td>
+														<td>
+															<input name="SUBMIT" value="View File" type="SUBMIT">
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											<br />
+											<br />
+											<hr width="100%">
+											Viewing file: paulwalko.github.io/WebGoat-Local/lessons/
+											<hr width="100%">
+											<br>The following error occurred while accessing the file: 
+											<script>goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();</script>
+										</form>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

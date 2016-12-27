@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Bypass Client Side JavaScript Validation</h2>
+									</header>
+									
+
+									<p>
+										<div id="lessonContent">
+										    This website performs both client and server side validation. For this
+										    exercise, your job is to break the client side validation and send the
+										    website input that it wasn't expecting. <b>You must break all 7 validators
+										    at the same time.</b>
+										</div>
+
+										<div id="lessonContent">
+										    <form accept-charset="UNKNOWN" action="attack?Screen=17&amp;menu=1700"
+										    enctype="" id="form" method="post" name="form">
+										        <script>
+										regex1=/^[a-z]{3}$/;
+										        regex2=/^[0-9]{3}$/;
+										        regex3=/^[a-zA-Z0-9 ]*$/;
+										        regex4=/^(one|two|three|four|five|six|seven|eight|nine)$/;
+										        regex5=/^\d{5}$/;
+										        regex6=/^\d{5}(-\d{4})?$/;
+										        regex7=/^[2-9]\d{2}-?\d{3}-?\d{4}$/;
+										        function validate() { 
+										        msg='JavaScript found form errors'; err=0; 
+										        if (!regex1.test(document.form.field1.value)) {err+=1; msg+='\n  bad field1';}
+										        if (!regex2.test(document.form.field2.value)) {err+=1; msg+='\n  bad field2';}
+										        if (!regex3.test(document.form.field3.value)) {err+=1; msg+='\n  bad field3';}
+										        if (!regex4.test(document.form.field4.value)) {err+=1; msg+='\n  bad field4';}
+										        if (!regex5.test(document.form.field5.value)) {err+=1; msg+='\n  bad field5';}
+										        if (!regex6.test(document.form.field6.value)) {err+=1; msg+='\n  bad field6';}
+										        if (!regex7.test(document.form.field7.value)) {err+=1; msg+='\n  bad field7';}
+										        if ( err > 0 ) alert(msg);
+										        else document.form.submit();
+										        } 
+										        </script>
+
+										        <div>
+										            Field1: exactly three lowercase characters(^[a-z]{3}$)
+										        </div>
+
+										        <div>
+										            <textarea cols="25" name="field1" rows="1">
+										abc
+										</textarea>
+										        </div>
+
+										        <p></p>
+
+										        <div>
+										            Field2: exactly three digits(^[0-9]{3}$)
+										        </div>
+
+										        <div>
+										            <textarea cols="25" name="field2" rows="1">
+										123
+										</textarea>
+										        </div>
+
+										        <p></p>
+
+										        <div>
+										            Field3: letters, numbers, and space only(^[a-zA-Z0-9 ]*$)
+										        </div>
+
+										        <div>
+										            <textarea cols="25" name="field3" rows="1">
+										abc 123 ABC
+										</textarea>
+										        </div>
+
+										        <p></p>
+
+										        <div>
+										            Field4: enumeration of numbers
+										            (^(one|two|three|four|five|six|seven|eight|nine)$)
+										        </div>
+
+										        <div>
+										            <textarea cols="25" name="field4" rows="1">
+										seven
+										</textarea>
+										        </div>
+
+										        <p></p>
+
+										        <div>
+										            Field5: simple zip code (^\d{5}$)
+										        </div>
+
+										        <div>
+										            <textarea cols="25" name="field5" rows="1">
+										90210
+										</textarea>
+										        </div>
+
+										        <p></p>
+
+										        <div>
+										            Field6: zip with optional dash four (^\d{5}(-\d{4})?$)
+										        </div>
+
+										        <div>
+										            <textarea cols="25" name="field6" rows="1">
+										90210-1111
+										</textarea>
+										        </div>
+
+										        <p></p>
+
+										        <div>
+										            Field7: US phone number with or without dashes
+										            (^[2-9]\d{2}-?\d{3}-?\d{4}$)
+										        </div>
+
+										        <div>
+										            <textarea cols="25" name="field7" rows="1">
+										301-604-4882
+										</textarea>
+										        </div>
+
+										        <p><input onclick="validate();" type="button" value="Submit"></p>
+										    </form><script>
+										goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();
+										    </script>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

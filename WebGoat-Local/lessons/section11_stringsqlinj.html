@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>String SQL Injection</h2>
+									</header>
+									
+
+									<p>
+										<div id="lessonContent">
+										    SQL injection attacks represent a serious threat to any database-driven
+										    site. The methods behind an attack are easy to learn and the damage caused
+										    can range from considerable to complete system compromise. Despite these
+										    risks, an incredible number of systems on the internet are susceptible to
+										    this form of attack.<br>
+										    <br>
+										    Not only is it a threat easily instigated, it is also a threat that, with a
+										    little common-sense and forethought, can easily be prevented.<br>
+										    <br>
+										    It is always good practice to sanitize all input data, especially data that
+										    will used in OS command, scripts, and database queries, even if the threat
+										    of SQL injection has been prevented in some other manner.<br>
+
+										    <p style="font-weight: bold">General Goal(s):</p>The form below allows a
+										    user to view their credit card numbers. Try to inject an SQL string that
+										    results in all the credit card numbers being displayed. Try the user name
+										    of 'Smith'.
+										</div>
+
+										<div id="lessonContent">
+										    <form accept-charset="UNKNOWN" action="attack?Screen=36&amp;menu=1100"
+										    enctype="" id="form" method="post" name="form">
+										        <p>Enter your last name: <input name="account_name" type="text" value=
+										        "Your Name"><input name="SUBMIT" type="submit" value="Go!"></p>
+										        <pre>
+										SELECT * FROM user_data WHERE last_name = 'Your Name'
+										</pre>No results matched. Try Again.
+										    </form><script>
+										goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();
+										    </script>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

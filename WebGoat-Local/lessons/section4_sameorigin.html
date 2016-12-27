@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Same Origin Policy Protection</h2>
+									</header>
+									
+
+									<p>
+										<h3>Environment Information</h3>
+										WebGoat uses the Apache Tomcat server but can run in any application server. It is configured to run on localhost although this can be easily changed, see the "Tomcat Configuration" section in the Introduction. 
+									</p>
+									<p>
+										This exercise demonstrates the Same Origin Policy Protection. XHR requests can only be passed back to the originating server. Attempts to pass data to a non-originating server will fail.<br />
+										<form accept-charset="UNKNOWN" method="POST" name="form" action="attack?Screen=41&amp;menu=400" enctype="">
+											<script src="lessonJS/sameOrigin.js" language="JavaScript"></script>
+											<input id="hiddenWGStatus" value="0" name="hiddenWGStatus" type="HIDDEN">
+											<input id="hiddenGoogleStatus" value="0" name="hiddenGoogleStatus" type="HIDDEN">Enter a URL: <br>
+											<textarea id="requestedURL" rows="1" wrap="SOFT" cols="60">
+											</textarea><button value="Go!" name="Go!" onclick="submitXHR();" type="button">Go!</button>
+											<br>
+											<br>
+											<h3 id="responseTitle">Response: </h3>
+											<textarea id="responseArea" rows="4" name="responseArea" cols="60"></textarea>
+											<br>
+											<br>
+											<a href="javascript:populate(&quot;lessons/Ajax/sameOrigin.jsp&quot;)">Click here to try a Same Origin request:<br> lessons/Ajax/sameOrigin.jsp</a>
+											<br>
+											<br>
+											<a href="javascript:populate(&quot;http://www.google.com/search?q=aspect+security&quot;)">Click here to try a Different Origin request:
+												<br> http://www.google.com/search?q=aspect+security
+											</a>
+										</form>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Encoding Basics</h2>
+									</header>
+									
+
+									<p>
+										<div id="lessonContent">
+										    This lesson will familiarize the user with different encoding schemes.
+										</div>
+
+										<div id="lessonContent">
+										    <form accept-charset="UNKNOWN" action="attack?Screen=62&amp;menu=1500"
+										    enctype="" id="form" method="post" name="form">
+										        <table>
+										            <tbody>
+										                <tr>
+										                    <td>Enter a string:</td>
+
+										                    <td><input name="input" type="text" value=""></td>
+										                </tr>
+
+										                <tr>
+										                    <td>Enter a password (optional):</td>
+
+										                    <td><input name="key" type="text" value=""></td>
+										                </tr>
+
+										                <tr>
+										                    <td align="center" colspan="2"><input name="SUBMIT" type=
+										                    "submit" value="Go!"></td>
+										                </tr>
+										            </tbody>
+										        </table>
+
+										        <p></p>
+
+										        <table border="0" cellpadding="4" cellspacing="1" width="100%">
+										            <tbody>
+										                <tr>
+										                    <td align="center" style="font-weight: bold">
+										                    Description</td>
+
+										                    <td align="center" style="font-weight: bold">Encoded</td>
+
+										                    <td align="center" style="font-weight: bold">Decoded</td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">Base64 encoding is a
+										                    simple reversable encoding used to encode bytes into ASCII
+										                    characters. Useful for making bytes into a printable
+										                    string, but provides no security.</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">Entity encoding uses
+										                    special sequences like &amp;amp; for special characters.
+										                    This prevents these characters from being interpreted by
+										                    most interpreters.</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">Password based
+										                    encryption (PBE) is strong encryption with a text password.
+										                    Cannot be decrypted without the password</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                            /MI6QLf8NMA=
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">MD5 hash is a
+										                    checksum that can be used to validate a string or byte
+										                    array, but cannot be reversed to find the original string
+										                    or bytes. For obscure cryptographic reasons, it is better
+										                    to use SHA-256 if you have a choice.</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                            1B2M2Y8AsgTpgAmY7PhCfg==
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                            Cannot reverse a hash
+										                        </div>
+										                    </td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">SHA-256 hash is a
+										                    checksum that can be used to validate a string or byte
+										                    array, but cannot be reversed to find the original string
+										                    or bytes.</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                            47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                            N/A
+										                        </div>
+										                    </td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">Unicode encoding
+										                    is...</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                            Not Implemented
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                            Not Implemented
+										                        </div>
+										                    </td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">URL encoding
+										                    is...</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">Hex encoding simply
+										                    encodes bytes into %xx format.</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">Rot13 encoding is a
+										                    way to make text unreadable, but is easily reversed and
+										                    provides no security.</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">XOR with password
+										                    encoding is a weak encryption scheme that mixes a password
+										                    into data.</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">Double unicode
+										                    encoding is...</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                            Not Implemented
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                            Not Implemented
+										                        </div>
+										                    </td>
+										                </tr>
+
+										                <tr>
+										                    <td style="background-color: #BBBBBB">Double URL encoding
+										                    is...</td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+
+										                    <td style="background-color: #DDDDDD">
+										                        <div style="overflow:auto; height:60px; width:100px;">
+										                        </div>
+										                    </td>
+										                </tr>
+										            </tbody>
+										        </table>
+										    </form><script>
+										goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();
+										    </script>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

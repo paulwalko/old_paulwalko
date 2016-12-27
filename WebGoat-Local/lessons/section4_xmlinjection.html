@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>XML Injection</h2>
+									</header>
+									
+
+									<p>									
+										<div id="lessonContent">
+										    
+										    WebGoat-Miles Reward Miles shows all the rewards available. Once you've entered your account ID, the lesson will show you your balance and the products you can afford. Your goal is to try to add more rewards to your allowed set of rewards. Your account ID is 836239.
+										</div>
+										<div id="lessonContent">
+											<form accept-charset="UNKNOWN" method="POST" name="form" action="attack?Screen=59&amp;menu=400" enctype="">
+												<script>
+													function getRewards() {
+													var accountIDField = document.getElementById('accountID');
+													if (accountIDField.value.length < 6 ) { return; }
+													var url = 'attack?Screen=59&menu=400&from=ajax&accountID=' + encodeURIComponent(accountIDField.value);
+													if (typeof XMLHttpRequest != 'undefined') {
+													req = new XMLHttpRequest();
+													} else if (window.ActiveXObject) {
+													req = new ActiveXObject('Microsoft.XMLHTTP');
+													   }
+													   req.open('GET', url, true);
+													   req.onreadystatechange = callback;
+													   req.send(null);
+													}
+													function callback() {
+													    if (req.readyState == 4) { 
+													        if (req.status == 200) { 
+													            var rewards = req.responseXML.getElementsByTagName('reward');
+													          var rewardsDiv = document.getElementById('rewardsDiv');
+													             rewardsDiv.innerHTML = '';
+													             var strHTML='';
+													             strHTML = '<tr><td>&nbsp;</td><td><b>Rewards</b></td></tr>';
+													          for(var i=0; i< rewards.length; i++){
+													             strHTML = strHTML + '<tr><td><input name="check' + (i+1001) +'" type="checkbox"></td><td>';
+													               strHTML = strHTML + rewards[i].firstChild.nodeValue + '</td></tr>';
+													          }
+													               strHTML = '<table>' + strHTML + '</table>';
+													             strHTML = 'Your account balance is now 100 points<br><br>' + strHTML;
+													               rewardsDiv.innerHTML = strHTML;
+													        }}}
+												</script>
+												<br>
+												<h1>Welcome to WebGoat-Miles Reward Miles Program.</h1>
+												<br>
+												<br>
+												<h3>Rewards available through the program:</h3>
+												<br>
+												<table width="90%" align="center" border="0" cellpadding="0" cellspacing="0">
+													<tbody>
+														<tr>
+															<td>-WebGoat t-shirt</td>
+															<td>50 Pts</td>
+														</tr>
+														<tr>
+															<td>-WebGoat Secure Kettle</td>
+															<td>30 Pts</td>
+														</tr>
+														<tr>
+															<td>-WebGoat Mug</td>
+															<td>20 Pts</td>
+														</tr>
+														<tr>
+															<td>-WebGoat Core Duo Laptop</td>
+															<td>2000 Pts</td>
+														</tr>
+														<tr>
+															<td>-WebGoat Hawaii Cruise</td>
+															<td>3000 Pts</td>
+														</tr>
+													</tbody>
+												</table>
+												<br>
+												<h3>Redeem your points:</h3>
+												<br>
+												<table width="90%" align="center" border="0" cellpadding="0" cellspacing="0">
+													<tbody>
+														<tr>
+															<td>Please enter your account ID:</td>
+															<td><input id="accountID" onkeyup="getRewards();" value="" name="accountID" type="TEXT"></td>
+														</tr>
+													</tbody>
+												</table>
+												<br>
+												<br>
+												<br>
+												<div id="rewardsDiv" name="rewardsDiv"></div>
+												<input name="SUBMIT" value="Submit" type="SUBMIT">
+											</form>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

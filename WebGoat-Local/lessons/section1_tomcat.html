@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2><a href="#">How To Configure Tomcat</a></h2>
+									</header>
+									
+
+									<p>
+										<h3>Introduction</h3>
+										WebGoat comes with default configurations for Tomcat. This page will explain these configurations and other possible configurations for Tomcat. This is just a short description which should be enough in most cases. For more advanced tasks please refer to the Tomcat documentation. Please note that all solutions are written for the standard configurations on port 80 or 8080. If you use another port you have to adjust the solution to your configuration.
+									</p>
+									<p>
+										<h3>The Standard Configurations</h3>
+										WebGoat has multiple ways of being run. The <a href="https://github.com/WebGoat/WebGoat/wiki/Installation-(WebGoat-6.0)">WebGoat Wiki</a> is the best place to find the latest configuration instructions. By default WebGoat will run on port 8080. In the basic configurations you use the server on your localhost. In Linux you have to start WebGoat as root or with sudo if you want to run it on port 80 and 443. Running software as root is dangerous we strongly advice to use the port 8080 and 8443. 
+									</p>
+									<p>
+										<h3>Server Configurations</h3>
+										If you are a single user of WebGoat the standard configurations should be enough but if you want to use WebGoat in laboratory or in class there might be the need to change the configurations. Before changing the configurations we recommend doing a backup of the files you change. 
+									</p>
+									<p>
+										<h3>Change Ports</h3>
+										To change the ports open Tomcat's server.xml which you find in tomcat/conf and change the non-SSL port. If you want to change your Tomcat server to use it on port 8079 for example: 
+										<div class="code">
+											&#60;!--Define a non-SSL HTTP/1.1 Connector on port 8079 &#62;
+											<br />
+											&#60;Connector address="127.0.0.1" port="8079"...
+										</div>
+										You can also change the SSL connector to another port of course. In this example to port 8442: 
+										<div class="code">
+											&#60;!--Define a SSL HTTP/1.1 Connector on port 8442&#62;
+											<br />
+											&#60;Connector address="127.0.0.1" port="8442"... 
+										</div>
+										You can also modify WebGoat's pom.xml file to change the port. You will need to modify the tomcat7-maven-plugin plugin configuration. 
+									</p>
+									<p>
+										<h3>Make WebGoat Reachable From Another Client</h3>
+										THIS MAKES IT POSSIBLE TO REALLY ATTACK YOUR SERVER! DO NOT DO THIS UNTIL YOU KNOW WHAT YOU ARE DOING. THIS CONFIGURATION SHOULD BE ONLY USED IN SAFE NETWORKS!
+										<br />
+										By its default configuration, WebGoat is only reachable within the localhost. In a laboratory or a class there is maybe the need of having a server and a few clients. In this case it is possible to make WebGoat reachable. 
+									</p>
+									<p>
+										<h3>Permit Only Certain Client Connection</h3>
+										If you have made WebGoat reachable it is reachable for all clients. If you want to make it reachable only for certain clients specified by their IP you can archive this by using a 'Remote Address Filter'. The filter can be set in a whitebox or blackbox approach. Here is only discussed the whitebox approach. You have to add following lines to the Host section of server.xml in your Tomcat server configuration: 
+										<div class="code">
+											&#60;Valve className="org.apache.catalina.valves.RemoteAddrValve"
+											<br />
+											allow="127.0.0.1,ip1,ip2"/&#62;
+										</div>
+										In this case only localhost, ip1 and ip2 are permitted to connect.
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

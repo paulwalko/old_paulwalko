@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Silent Transactions Attacks</h2>
+									</header>
+									
+
+									<p>	
+										<div id="lessonContent">    
+											* This is a sample internet banking application - money transfer page.<br>
+											* It shows below your balance, the account you are transferring to and amount you will transfer.<br>
+											* The application uses AJAX to submit the transaction after doing some basic client side validations.<br>
+											* Your goal is to try to bypass the user's authorization and silently execute the transaction.<br>
+											</div>
+											<div id="lessonContent">
+												<form accept-charset="UNKNOWN" method="POST" name="form" action="attack?Screen=69&amp;menu=400" enctype="">
+													<script>
+														function processData(){
+														 var accountNo = document.getElementById('newAccount').value;
+														 var amount = document.getElementById('amount').value;
+														 if ( accountNo == ''){
+														 alert('Please enter a valid account number to transfer to.')
+														 return;
+														}
+														 else if ( amount == ''){
+														 alert('Please enter a valid amount to transfer.')
+														 return;
+														}
+														 var balanceValue = document.getElementById('balanceID').innerHTML;
+														 balanceValue = balanceValue.replace( new RegExp('$') , '');
+														 if ( parseFloat(amount) > parseFloat(balanceValue) ) {
+														 alert('You can not transfer more funds than what is available in your balance.')
+														 return;
+														}
+														 document.getElementById('confirm').value  = 'Transferring'
+														submitData(accountNo, amount);
+														 document.getElementById('confirm').value  = 'Confirm'
+														balanceValue = parseFloat(balanceValue) - parseFloat(amount);
+														balanceValue = balanceValue.toFixed(2);
+														document.getElementById('balanceID').innerHTML = balanceValue + '$';
+														}
+														function submitData(accountNo, balance) {
+														var url = 'attack?Screen=69&menu=400&from=ajax&newAccount='+ accountNo+ '&amount=' + balance +'&confirm=' + document.getElementById('confirm').value; 
+														if (typeof XMLHttpRequest != 'undefined') {
+														req = new XMLHttpRequest();
+														} else if (window.ActiveXObject) {
+														req = new ActiveXObject('Microsoft.XMLHTTP');
+														   }
+														   req.open('GET', url, true);
+														   req.onreadystatechange = callback;
+														   req.send(null);
+														}
+														function callback() {
+														    if (req.readyState == 4) { 
+														        if (req.status == 200) { 
+														                   var result =  req.responseText ;
+														          var resultsDiv = document.getElementById('resultsDiv');
+														             resultsDiv.innerHTML = '';
+														               resultsDiv.innerHTML = result;
+														        }}}
+													</script>
+													<h1>Welcome to WebGoat Banking System</h1>
+													<br>
+													<h3>Account Summary:</h3>
+													<br>
+													<table width="70%" align="left" border="1" cellpadding="0" cellspacing="0">
+														<tbody>
+															<tr>
+																<td>Account Balance:</td>
+																<td><div id="balanceID">11987.09$</div></td>
+															</tr>
+															<tr>
+																<td>Transfer to Account:</td>
+																<td><input id="newAccount" value="" name="newAccount" type="TEXT"></td>
+															</tr>
+															<tr>
+																<td>Transfer Amount:</td>
+																<td><input id="amount" value="0" name="amount" type="TEXT"></td>
+															</tr>
+														</tbody>
+													</table>
+													<br>
+													<br>
+													<pre></pre>
+													<input onclick="processData();" id="confirm" value="Confirm" name="confirm" type="BUTTON">
+													<br>
+													<div id="resultsDiv" name="resultsDiv" style="font-weight: bold;color:red;"></div>
+												</form>
+												<script>goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();</script>
+											</div>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

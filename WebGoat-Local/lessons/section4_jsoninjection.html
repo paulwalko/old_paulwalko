@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>JSON Injection</h2>
+									</header>
+									
+
+									<p>	
+										<div id="lessonContent">    
+											* You are traveling from Boston, MA- Airport code BOS to Seattle, WA - Airport code SEA.<br> 
+											* Once you enter the three digit code of the airport, an AJAX request will be executed asking for the ticket price.<br>
+											* You will notice that there are two flights available, an expensive one with no stops and another cheaper one with 2 stops.<br>
+											* Your goal is to try to get the one with no stops but for a cheaper price.
+											</div>
+											<div id="lessonContent">
+												<form accept-charset="UNKNOWN" method="POST" name="form" action="attack?Screen=44&amp;menu=400" enctype="" onsubmit="return check();">
+													<script>
+														function getFlights() {
+														var fromField = document.getElementById('travelFrom');
+														if (fromField.value.length < 3 || fromField.value!='BOS') { return; }
+														var toField = document.getElementById('travelTo');
+														if (toField.value.length < 3 || toField.value!='SEA') { return; }
+														var url = 'attack?Screen=44&menu=400&from=ajax&travelFrom=' + encodeURIComponent(fromField.value) +'&travelTo=' + encodeURIComponent(toField.value);
+														if (typeof XMLHttpRequest != 'undefined') {
+														req = new XMLHttpRequest();
+														} else if (window.ActiveXObject) {
+														req = new ActiveXObject('Microsoft.XMLHTTP');
+														   }
+														   req.open('GET', url, true);
+														   req.onreadystatechange = callback;
+														   req.send(null);
+														}
+														function callback() {
+														    if (req.readyState == 4) { 
+														        if (req.status == 200) { 
+														                   var card = eval('(' + req.responseText + ')');
+														          var flightsDiv = document.getElementById('flightsDiv');
+														             flightsDiv.innerHTML = '';
+														             var strHTML='';
+														             strHTML = '<tr><td>&nbsp;</td><td>No of Stops</td>';
+														             strHTML = strHTML + '<td>Stops</td><td>Prices</td></tr>';
+														          for(var i=0; i<card.flights.length; i++){
+														             var node = card.flights[i];
+														             strHTML = strHTML + '<tr><td><input name="radio'+i+'" type="radio" id="radio'+i+'"></td><td>';
+														             strHTML = strHTML + card.flights[i].stops + '</td><td>';
+														             strHTML = strHTML + card.flights[i].transit + '</td><td>';
+														             strHTML = strHTML + '<div name="priceID'+i+'" id="priceID'+i+'">' + card.flights[i].price + '</div></td></tr>';
+														          }
+														             strHTML = '<table border="1">' + strHTML + '</table>';
+														               flightsDiv.innerHTML = strHTML;
+														        }}}
+														function check(){
+														 if ( document.getElementById('radio0') && document.getElementById('radio0').checked  )
+														 { document.getElementById('price2Submit').value = document.getElementById('priceID0').innerHTML; return true;}
+														 else if ( document.getElementById('radio1') && document.getElementById('radio1').checked  )
+														 { document.getElementById('price2Submit').value = document.getElementById('priceID1').innerHTML; return true;}
+														 else 
+														 { alert('Please choose one flight'); return false;}
+														}
+													</script>
+													<table width="90%" align="center" border="0" cellpadding="0" cellspacing="0">
+														<tbody>
+															<tr>
+																<td>From: </td>
+																<td><input id="travelFrom" onkeyup="getFlights();" value="" name="travelFrom" type="TEXT"></td>
+															</tr>
+															<tr>
+																<td>To: </td>
+																<td><input id="travelTo" onkeyup="getFlights();" value="" name="travelTo" type="TEXT"></td>
+															</tr>
+														</tbody>
+													</table>
+													<br>
+													<br>
+													<div id="flightsDiv" name="flightsDiv"></div>
+													<input name="SUBMIT" value="Submit" type="SUBMIT">
+													<input id="price2Submit" value="" name="price2Submit" type="HIDDEN">
+												</form>
+												<script>goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();</script>
+											</div>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>

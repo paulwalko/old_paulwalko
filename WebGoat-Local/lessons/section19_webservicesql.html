@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebGoat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie/v8.css" /><![endif]-->
+	</head>
+	<!--
+		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+		Set it to "right-sidebar" to, you guessed it, position it on the right.
+	-->
+	
+	<body class="left-sidebar">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+					
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<!--
+											Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+											if they get too long. You can also remove the <p> entirely if you don't
+											need a subtitle.
+										-->
+										<h2>Web Service SQL Injection</h2>
+									</header>
+									
+
+									<p>
+										<div id="lessonContent">
+										    Web Services communicate through the use of SOAP requests. These requests
+										    are submitted to a web service in an attempt to execute a function defined
+										    in the web service definition language (WSDL) file.
+
+										    <p style="font-weight: bold">General Goal(s):</p>Check the web service
+										    description language (WSDL) file and try to obtain multiple customer credit
+										    card numbers. You will not see the results returned to this screen. When
+										    you believe you have suceeded, refresh the page and look for the 'green
+										    star'.
+										</div>
+
+										<div id="lessonContent">
+										    <form accept-charset="UNKNOWN" action="attack?Screen=60&amp;menu=1900"
+										    enctype="" id="form" method="post" name="form">
+										        <p>Enter your Account Number: <input name="account_number" type="text"
+										        value="101"><input name="SUBMIT" type="submit" value="Go!"></p>
+										        <pre>
+										SELECT * FROM user_data WHERE userid = 101
+										</pre>
+
+										        <table border="1" cellpadding="1">
+										            <tbody>
+										                <tr>
+										                    <td style="font-weight: bold">USERID</td>
+
+										                    <td style="font-weight: bold">FIRST_NAME</td>
+
+										                    <td style="font-weight: bold">LAST_NAME</td>
+
+										                    <td style="font-weight: bold">CC_NUMBER</td>
+
+										                    <td style="font-weight: bold">CC_TYPE</td>
+
+										                    <td style="font-weight: bold">COOKIE</td>
+
+										                    <td style="font-weight: bold">LOGIN_COUNT</td>
+										                </tr>
+
+										                <tr>
+										                    <td>101</td>
+
+										                    <td>Joe</td>
+
+										                    <td>Snow</td>
+
+										                    <td>987654321</td>
+
+										                    <td>VISA</td>
+
+										                    <td>&nbsp;</td>
+
+										                    <td>0</td>
+										                </tr>
+
+										                <tr>
+										                    <td>101</td>
+
+										                    <td>Joe</td>
+
+										                    <td>Snow</td>
+
+										                    <td>2234200065411</td>
+
+										                    <td>MC</td>
+
+										                    <td>&nbsp;</td>
+
+										                    <td>0</td>
+										                </tr>
+										            </tbody>
+										        </table>
+
+										        <p>Exploit the following WSDL to access sensitive data:<br>
+										        <a href="services/WsSqlInjection?WSDL">WebGoat WSDL File</a></p>
+										    </form><script>
+										goat.utils.makeFormsAjax();goat.utils.ajaxifyAttackHref();
+										    </script>
+										</div>
+									</p>
+								</article>
+							</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar"></div>
+			</div>
+
+	</body>
+</html>
